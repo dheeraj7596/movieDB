@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 //		$this->load->view('template/header',$data);
 //		$this->load->view('displayBook',$data);
 //		$this->load->view('template/footer');
-                $this->load->view('index.php');
+                $this->load->view('login_form.php');
 	}
             public function genre($genre)
             {
@@ -95,41 +95,41 @@ class Home extends CI_Controller {
         public function user_login_process() {
 
 
-            // $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-            // $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-            //
-            // if ($this->form_validation->run() == FALSE) {
-            //     if(isset($this->session->userdata['logged_in'])){
-            //         $this->load->view('admin_page');
-            //     }else{
-            //         $this->load->view('login_form');
-            //     }
-            // } else {
-            //     $data = array(
-            //     'username' => $this->input->post('username'),
-            //     'password' => $this->input->post('password')
-            //     );
-            //     $result = $this->movie_model->login($data);
-            //     if ($result == TRUE) {
-            //
-            //         $username = $this->input->post('username');
-            //         $result = $this->movie_model->read_user_information($username);
-            //         if ($result != false) {
-            //         $session_data = array(
-            //         'username' => $result[0]->username,
-            //         'email' => $result[0]->user_email,
-            //         );
-            //         // Add user data in session
-            //         $this->session->set_userdata('logged_in', $session_data);
-            //         $this->load->view('admin_page');
-            //         }
-            //     } else {
-            //         $data = array(
-            //         'error_message' => 'Invalid Username or Password'
-            //         );
-            //         $this->load->view('login_form', $data);
-            //     }
-            // }
+            $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+
+            if ($this->form_validation->run() == FALSE) {
+                if(isset($this->session->userdata['logged_in'])){
+                    $this->load->view('admin_page');
+                }else{
+                    $this->load->view('login_form');
+                }
+            } else {
+                $data = array(
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password')
+                );
+                $result = $this->movie_model->login($data);
+                if ($result == TRUE) {
+
+                    $username = $this->input->post('username');
+                    $result = $this->movie_model->read_user_information($username);
+                    if ($result != false) {
+                    $session_data = array(
+                    'username' => $result[0]->username,
+                    'email' => $result[0]->user_email,
+                    );
+                    // Add user data in session
+                    $this->session->set_userdata('logged_in', $session_data);
+                    $this->load->view('admin_page');
+                    }
+                } else {
+                    $data = array(
+                    'error_message' => 'Invalid Username or Password'
+                    );
+                    $this->load->view('login_form', $data);
+                }
+            }
             $this->load->view('index.php');
         }
 
@@ -147,7 +147,7 @@ class Home extends CI_Controller {
         }
 
 
-            
+
             // public function review_submit($page = 'insert')
 
 }
