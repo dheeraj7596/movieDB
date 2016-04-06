@@ -25,6 +25,7 @@
 </head><!--/head-->
 
 <body>
+<<<<<<< HEAD
     <?=form_open('insert/data_submit/'); ?>
     <table width="485" cellspacing="0" cellpadding="0">
         <tr>
@@ -39,6 +40,9 @@
         </tr>
     </table>
     <?=form_close();?>
+=======
+
+>>>>>>> 18163c6686069868d38c9caa233189a56618473f
 
 
 
