@@ -52,26 +52,33 @@ class Home extends CI_Controller {
                 $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
 //Validating Heading Field
-                $this->form_validation->set_rules('dheading', 'heading');
+                $this->form_validation->set_rules('dheading', 'heading', 'required');
 
 //Validating Body Field
                 $this->form_validation->set_rules('dbody', 'body', 'required|max_length[1000]');
 
                 if ($this->form_validation->run() == FALSE) {
-                    $data['message'] = 'Data not inserted';
-                    $this->load->view('write_review');
+                    $data['message'] = 'Review not written';
+                    $this->load->view('write_review', $data);
                 } else {
 //Setting values for tabel columns
                     $data = array(
                     'heading' => $this->input->post('dheading'),
                     'body' => $this->input->post('dbody'),
                     );
-                    $this->movie_model->form_insert($data);
+                    $data['rating'] = 9;
+                    $data['userid'] = 1;
+                    $data['movieid'] = 2;
+                    $this->movie_model->review_insert($data);
                     $data['message'] = 'Data Inserted Successfully';
                     //Loading View
-                    $this->load->view('write_review', $data);
+                    $this->load->view('index');
                 }
 
+            }
+            public function new_review_page()
+            {
+                $this->load->view('write_review');
             }
             public function read_review($reviewid)
             {
