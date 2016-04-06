@@ -164,33 +164,28 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($movieDetails as $movie_item): ?>
-              <tr>
-                <!--<li class="span3">-->
-                <td class="movie_name">
-            <tr>
               <?php foreach ($movieDetails as $movie_item): ?>
-                <!--<li class="span3">-->
-                                <td class="movie_name">
-                  <?php echo $movie_item['name'];?>
-                </td>
-                <td class="movie_year">
-                  <?php echo $movie_item['year'];?>
-                </td>
-                <td class="movie_genre">
-                  <?php echo $movie_item['genre'];?>
-                </td>
-                <td class="movie_reviews" -->
-                    <a href="<?php echo base_url().'index.php/home/review_movie/'.$movie_item['id'];?>" class="btn" type="button">Review</a>
-                </td>
                 <tr>
-                  <td class="movie_image">
-                  <a href=""><img src="<?php echo base_url();?>assets/images/cart/titanic.jpg" alt=""></a>
-
-                  </td>
+                <!--<li class="span3">-->
+                    <td class="movie_name">
+                        <?php echo $movie_item['name'];?>
+                    </td>
+                    <td class="movie_year">
+                        <?php echo $movie_item['year'];?>
+                    </td>
+                    <td class="movie_genre">
+                        <?php echo $movie_item['genre'];?>
+                    </td>
+                    <td class="movie_reviews" -->
+                        <a href="<?php echo base_url().'index.php/home/review_movie/'.$movie_item['id'];?>" class="btn" type="button">Review</a>
+                    </td>
+                    <tr>
+                        <td class="movie_image">
+                        <a href=""><img src="<?php echo base_url();?>assets/images/cart/titanic.jpg" alt=""></a>
+                        </td>
+                    </tr>
                 </tr>
-              </tr>
-            <?php endforeach; ?>
+              <?php endforeach; ?>
               <!-- <td class="cart_product">
 <<<<<<< HEAD
                 <a href=""><img src="<?php echo base_url();?>assets/images/cart/one.png" alt=""></a>
@@ -212,10 +207,10 @@
 <<<<<<< HEAD
 =======
 =======
-                  <?php endforeach; ?>
+                  <?php ; ?>
                 </tr>
 
-              <!-- <td class="cart_product">
+              <!<td class="cart_product">
                 <a href=""><img src="../../../assets/images/cart/one.png" alt=""></a>
               </td>
               <td class="cart_description">
