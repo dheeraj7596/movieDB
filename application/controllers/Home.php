@@ -20,11 +20,16 @@ class Home extends CI_Controller {
                 $this->load->view('index.php');
 	}
             public function genre($genre)
+<<<<<<< HEAD
             {
+=======
+        {
+>>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
                 $data['movieDetails'] = $this->movie_model->get_movie_by_genre($genre);
                 $data['genre'] = $genre;
                 $this->load->view('movie_genre_page.html',$data);
 //                echo implode(" ",$data['bookdetails'][1]);
+<<<<<<< HEAD
             }
 
             public function review_movie($movieid)
@@ -32,6 +37,9 @@ class Home extends CI_Controller {
                 $data['reviews'] = $this->movie_model->get_review_by_movie($movieid);
                 $this->load->view('movie_review.html',$data);
             }
+=======
+        }
+>>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
 
             public function read_review($reviewid)
             {

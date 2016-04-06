@@ -154,19 +154,33 @@
       <div class="table-responsive cart_info">
         <table class="table table-condensed">
           <thead>
+<<<<<<< HEAD
             <tr class="movie_details">
               <td class="movie_name">Movie</td>
               <td class="movie_year">year</td>
               <td class="movie_genre">Genre</td>
               <td class="movie_reviews">Review</td>
+=======
+            <tr class="cart_menu">
+              <td class="image">Movie</td>
+              <td class="price">year</td>
+              <td class="quantity">Genre</td>
+>>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
               <td></td>
             </tr>
           </thead>
           <tbody>
+<<<<<<< HEAD
             <?php foreach ($movieDetails as $movie_item): ?>
               <tr>
                 <!--<li class="span3">-->
                 <td class="movie_name">
+=======
+            <tr>
+              <?php foreach ($movieDetails as $movie_item): ?>
+                <!--<li class="span3">-->
+                                <td class="movie_name">
+>>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
                   <?php echo $movie_item['name'];?>
                 </td>
                 <td class="movie_year">
@@ -175,6 +189,7 @@
                 <td class="movie_genre">
                   <?php echo $movie_item['genre'];?>
                 </td>
+<<<<<<< HEAD
                 <td class="movie_reviews" -->
                     <a href="<?php echo base_url().'index.php/home/review_movie/'.$movie_item['id'];?>" class="btn" type="button">Review</a>
                 </td>
@@ -193,6 +208,19 @@
                 <p>Web ID: 1089772</p>
               </td> -->
               <!-- <td class="cart_price">
+=======
+                  <?php endforeach; ?>
+                </tr>
+
+              <!-- <td class="cart_product">
+                <a href=""><img src="../../../assets/images/cart/one.png" alt=""></a>
+              </td>
+              <td class="cart_description">
+                <h4><a href="">Colorblock Scuba</a></h4>
+                <p>Web ID: 1089772</p>
+              </td>
+              <td class="cart_price">
+>>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
                 <p>$59</p>
               </td> -->
               <!-- <td class="cart_quantity">
@@ -508,5 +536,9 @@
   <script src="../../../assets/js/jquery.scrollUp.min.js"></script>
     <script src="../../../assets/js/jquery.prettyPhoto.js"></script>
     <script src="../../../assets/js/main.js"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
 </body>
 </html>
