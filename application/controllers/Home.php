@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 //		$this->load->view('template/header',$data);
 //		$this->load->view('displayBook',$data);
 //		$this->load->view('template/footer');
-                $this->load->view('login_form.php');
+                $this->load->view('index.php');
 	}
             public function genre($genre)
             {
@@ -45,11 +45,11 @@ class Home extends CI_Controller {
                 $this->load->view('movie_review.html',$data);
             }
 
-            public function read_review($reviewid)
-            {
-                $data['read'] = $this->movie_model->get_full_review($reviewid);
-                $this->load->view('full_review.html',$data);
-            }
+            // public function read_review($reviewid)
+            // {
+            //     $data['read'] = $this->movie_model->get_full_review($reviewid);
+            //     $this->load->view('full_review.html',$data);
+            // }
             public function write_review($asd)
             {
                 $dbconnect = $this->load->database();

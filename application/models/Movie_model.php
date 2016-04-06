@@ -18,12 +18,9 @@ class Movie_model extends CI_Model {
                 $query = $this->db->get();
                 return $query->result_array();
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d6003eaac46c4dbfa5ac413d5b07d37536ba055a
+
         public function get_review_by_movie($movieid = FALSE)
-        {       
+        {
                 if ($movieid === FALSE)
                 {
                         $query = $this->db->get('test2');
@@ -48,11 +45,6 @@ class Movie_model extends CI_Model {
                 $query = $this->db->get();
                 return $query->result_array();
         }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 304b5d9d80c9594e2d90e05b4545010bdf48b9d6
->>>>>>> d6003eaac46c4dbfa5ac413d5b07d37536ba055a
         // public function get_book_info($isbn = FALSE)
         // {
         //         if ($isbn === FALSE)
