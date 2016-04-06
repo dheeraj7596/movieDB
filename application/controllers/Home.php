@@ -1,6 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
+// session_start();
 class Home extends CI_Controller {
 
 
@@ -115,8 +114,8 @@ class Home extends CI_Controller {
         public function user_login_process() {
 
 
-            $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('username', 'Username', 'trim|required');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
                 if(isset($this->session->userdata['logged_in'])){
@@ -137,7 +136,7 @@ class Home extends CI_Controller {
                     if ($result != false) {
                     $session_data = array(
                     'username' => $result[0]->username,
-                    'email' => $result[0]->user_email,
+                    // 'email' => $result[0]->user_email,
                     );
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
@@ -150,7 +149,6 @@ class Home extends CI_Controller {
                     $this->load->view('login_form', $data);
                 }
             }
-            $this->load->view('index.php');
         }
 
 
