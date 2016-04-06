@@ -2,7 +2,7 @@
 <?php
 if (isset($this->session->userdata['logged_in'])) {
 $username = ($this->session->userdata['logged_in']['username']);
-$email = ($this->session->userdata['logged_in']['email']);
+// $email = ($this->session->userdata['logged_in']['email']);
 } else {
 header("location: login");
 }
@@ -23,7 +23,7 @@ echo "<br/>";
 echo "<br/>";
 echo "Your Username is " . $username;
 echo "<br/>";
-echo "Your Email is " . $email;
+// echo "Your Email is " . $email;
 echo "<br/>";
 ?>
 <b id="logout"><a href="logout">Logout</a></b>
