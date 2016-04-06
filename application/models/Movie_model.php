@@ -18,14 +18,8 @@ class Movie_model extends CI_Model {
                 $query = $this->db->get();
                 return $query->result_array();
         }
-<<<<<<< HEAD
         public function get_review_by_movie($movieid = FALSE)
         {       
-=======
-
-        public function get_review_by_movie($movieid = FALSE)
-        {
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
                 if ($movieid === FALSE)
                 {
                         $query = $this->db->get('test2');
@@ -77,11 +71,6 @@ class Movie_model extends CI_Model {
         //         $query = $this->db->get();
         //         return $query->result_array();
         // }
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
         // public function get_author_books($author = FALSE)
         // {
         //         if ($author === FALSE)
@@ -95,11 +84,6 @@ class Movie_model extends CI_Model {
         //         $query = $this->db->get();
         //         return $query->result_array();
         // }
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
         // public function get_author_info($author = FALSE)
         // {
         //         if ($author === FALSE)
@@ -113,11 +97,6 @@ class Movie_model extends CI_Model {
         //         $query = $this->db->get();
         //         return $query->result_array();
         // }
-<<<<<<< HEAD
-}
-
-=======
-
         // Insert registration data in database
         public function registration_insert($data) {
 
@@ -174,4 +153,3 @@ class Movie_model extends CI_Model {
             }
         }
 }
->>>>>>> 18163c6686069868d38c9caa233189a56618473f

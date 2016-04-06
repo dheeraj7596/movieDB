@@ -9,8 +9,6 @@ class Home extends CI_Controller {
                 parent::__construct();
                 $this->load->model('movie_model');
                 $this->load->helper('url_helper');
-<<<<<<< HEAD
-=======
                 $this->load->helper('form');
                 $this->load->helper('file');
                 // Load form validation library
@@ -21,7 +19,6 @@ class Home extends CI_Controller {
 
                 // Load database
                 $this->load->model('movie_model');
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
         }
         public function index()
 	{
@@ -34,18 +31,10 @@ class Home extends CI_Controller {
 	}
             public function genre($genre)
             {
-<<<<<<< HEAD
-=======
-
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
                 $data['movieDetails'] = $this->movie_model->get_movie_by_genre($genre);
                 $data['genre'] = $genre;
                 $this->load->view('movie_genre_page.html',$data);
 //                echo implode(" ",$data['bookdetails'][1]);
-<<<<<<< HEAD
-=======
-
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
             }
 
             public function review_movie($movieid)
@@ -54,8 +43,6 @@ class Home extends CI_Controller {
                 $this->load->view('movie_review.html',$data);
             }
 
-<<<<<<< HEAD
-=======
             // public function read_review($reviewid)
             // {
             //     $data['read'] = $this->movie_model->get_full_review($reviewid);
@@ -67,20 +54,11 @@ class Home extends CI_Controller {
                 $this->load->model('movie_model');
 
         }
-
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
             public function read_review($reviewid)
             {
                 $data['read'] = $this->movie_model->get_full_review($reviewid);
                 $this->load->view('full_review.html',$data);
             }
-<<<<<<< HEAD
-            public function write_review($asd)
-            {
-                $dbconnect = $this->load->database();
-                $this->load->library('form_validation');
-                $this->load->model('movie_model');
-=======
 
         // Show registration page
         public function user_registration_show() {
@@ -168,9 +146,8 @@ class Home extends CI_Controller {
             $this->load->view('login_form', $data);
         }
 
->>>>>>> 18163c6686069868d38c9caa233189a56618473f
 
-            }
+            
             // public function review_submit($page = 'insert')
 
 }
