@@ -44,6 +44,11 @@ class Movie_model extends CI_Model {
                 $query = $this->db->get();
                 return $query->result_array();
         }
+        public function review_insert($data)
+        {
+// Inserting in Table(review) of Database(Movie)
+                $this->db->insert('students', $data);
+        }
         // public function get_book_info($isbn = FALSE)
         // {
         //         if ($isbn === FALSE)

@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 //		$this->load->view('template/header',$data);
 //		$this->load->view('displayBook',$data);
 //		$this->load->view('template/footer');
-                $this->load->view('login_form.php');
+                $this->load->view('index.php');
 	}
             public function genre($genre)
             {
@@ -48,12 +48,32 @@ class Home extends CI_Controller {
             //     $data['read'] = $this->movie_model->get_full_review($reviewid);
             //     $this->load->view('full_review.html',$data);
             // }
-            public function write_review($asd)
+            public function write_new_review()
             {
-                $dbconnect = $this->load->database();
-                $this->load->model('movie_model');
+                $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        }
+//Validating Heading Field
+                $this->form_validation->set_rules('dheading', 'heading');
+
+//Validating Body Field
+                $this->form_validation->set_rules('dbody', 'body', 'required|max_length[1000]');
+
+                if ($this->form_validation->run() == FALSE) {
+                    $data['message'] = 'Data not inserted';
+                    $this->load->view('write_review');
+                } else {
+//Setting values for tabel columns
+                    $data = array(
+                    'heading' => $this->input->post('dheading'),
+                    'body' => $this->input->post('dbody'),
+                    );
+                    $this->movie_model->form_insert($data);
+                    $data['message'] = 'Data Inserted Successfully';
+                    //Loading View
+                    $this->load->view('write_review', $data);
+                }
+
+            }
             public function read_review($reviewid)
             {
                 $data['read'] = $this->movie_model->get_full_review($reviewid);
