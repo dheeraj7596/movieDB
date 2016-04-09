@@ -19,7 +19,7 @@ class Movie_model extends CI_Model {
                 return $query->result_array();
         }
         public function get_review_by_movie($movieid = FALSE)
-        {       
+        {
                 if ($movieid === FALSE)
                 {
                         $query = $this->db->get('test2');
@@ -60,7 +60,7 @@ class Movie_model extends CI_Model {
             $this->db->from("test1");
             $this->db->like('name',$name);
             $query = $this->db->get();
-            return $query->result_array(); 
+            return $query->result_array();
         }
         // public function get_book_info($isbn = FALSE)
         // {
@@ -128,7 +128,7 @@ class Movie_model extends CI_Model {
             if ($query->num_rows() == 0) {
 
             // Query to insert data in database
-            $this->db->insert('usertest', $data);
+            $this->db->insert('test', $data);
             if ($this->db->affected_rows() > 0) {
             return true;
             }

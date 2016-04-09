@@ -18,7 +18,7 @@ header("location: http://localhost/login/index.php/user_authentication/user_logi
 echo "<div class='error_msg'>";
 echo validation_errors();
 echo "</div>";
-echo form_open('user_authentication/new_user_registration');
+echo form_open('home/new_user_registration');
 
 echo form_label('Create Username : ');
 echo"<br/>";
@@ -29,18 +29,26 @@ echo $message_display;
 }
 echo "</div>";
 echo"<br/>";
-echo form_label('Email : ');
-echo"<br/>";
-$data = array(
-'type' => 'email',
-'name' => 'email_value'
-);
-echo form_input($data);
-echo"<br/>";
-echo"<br/>";
+// $data = array(
+// 'type' => 'email',
+// 'name' => 'email_value'
+// );
+// echo form_input($data);
+// echo"<br/>";
+// echo"<br/>";
 echo form_label('Password : ');
 echo"<br/>";
 echo form_password('password');
+echo"<br/>";
+echo"<br/>";
+echo form_label('Age : ');
+echo"<br/>";
+echo form_input('age');
+echo"<br/>";
+echo"<br/>";
+echo form_label('Country : ');
+echo"<br/>";
+echo form_input('country');
 echo"<br/>";
 echo"<br/>";
 echo form_submit('submit', 'Sign Up');
