@@ -49,6 +49,19 @@ class Movie_model extends CI_Model {
 // Inserting in Table(review) of Database(Movie)
                 $this->db->insert('test2', $data);
         }
+        public function get_movie_info($name)
+        {
+            if ($name === FALSE)
+            {
+                $query = $this->db->get('moviedetails');
+                return $query->result_array();
+            }
+            $this->db->select("*");
+            $this->db->from("test1");
+            $this->db->like('name',$name);
+            $query = $this->db->get();
+            return $query->result_array(); 
+        }
         // public function get_book_info($isbn = FALSE)
         // {
         //         if ($isbn === FALSE)
