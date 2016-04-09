@@ -129,7 +129,7 @@
                                     </ul>
                                 </li>
 								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
 							</ul>
 						</div>
 					</div>

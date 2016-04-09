@@ -26,21 +26,41 @@
 <body>
 
 <div id="container">
-<?php echo form_open('Home/write_new_review'); ?>
-<h1>Review please...</h1><hr/>
+<?php echo form_open('Home/add_new_movie'); ?>
+<h1>Add Movie Mr.admin...</h1><hr/>
 <?php if (isset($message)) { ?>
 <CENTER><h3 style="color:green;"><?php echo $message;?></h3></CENTER><br>
 <?php } ?>
 <?php echo form_label('Title :'); ?> <br />
-<?php echo form_input(array('id' => 'dheading', 'name' => 'dheading', 'required' => 'true', 'maxlength' => '50')); ?><br />
+<?php echo form_input(array('id' => 'dtitle', 'name' => 'dtitle', 'required' => 'true', 'maxlength' => '50')); ?><br />
 
-<?php echo form_label('Body :'); ?> <?php echo form_error('demail'); ?><br />
-<?php echo form_textarea(array('id' => 'dbody', 'name' => 'dbody', 'required' => 'true')); ?><br />
+<?php echo form_label('Genre :'); ?> <br />
+<select id="selectype" name="genre" class="col-sm-2">
+    <option value="Romance">Romance</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Drama">Drama</option>
+    <option value="Horror">Horror</option>
+    <option value="Comedy">Comedy</option>
+</select> <br />                      
 
-<?php echo form_label('Rating :'); ?> <?php echo form_error('demail'); ?><br />
-<?php echo form_input(array('id' => 'drating', 'name' => 'drating', 'type' => 'number', 'required' => 'true', 'min' => '1', 'max' =>'10')); ?><br />
+<br/><?php echo form_label('Language :'); ?> <br />
+<select id="selectype" name="language" class="col-sm-2">
+    <option value="English">English</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Telugu">Telugu</option>
+</select> <br />
 
-<?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
+<br/><?php echo form_label('Country :'); ?> <br />
+<select id="selectype" name="country" class="col-sm-2">
+    <option value="USA">USA</option>
+    <option value="India">India</option>
+    <option value="UK">UK</option>
+</select> <br />
+
+<br/><?php echo form_label('Image name :'); ?> <br />
+<?php echo form_input(array('id' => 'dimgname', 'name' => 'dimgname', 'required' => 'true', 'maxlength' => '50')); ?><br />
+
+<br/><?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
 <?php echo form_close(); ?><br/>
 <div id="fugo">
 

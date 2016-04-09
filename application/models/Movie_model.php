@@ -170,4 +170,9 @@ class Movie_model extends CI_Model {
             return false;
             }
         }
+        public function movie_insert($data)
+        {
+// Inserting in Table(review) of Database(Movie)
+                $this->db->insert('movie', $data);
+        }
 }
