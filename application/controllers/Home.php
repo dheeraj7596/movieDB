@@ -57,6 +57,7 @@ class Home extends CI_Controller {
 //Validating Body Field
                 $this->form_validation->set_rules('dbody', 'body', 'required|max_length[1000]');
 
+                
                 if ($this->form_validation->run() == FALSE) {
                     $data['message'] = 'Review not written';
                     $this->load->view('write_review', $data);
@@ -171,7 +172,12 @@ class Home extends CI_Controller {
             $this->load->view('login_form', $data);
         }
 
-
+        public function movie_info_name() 
+        {
+            $data['movieDetails'] = $this->movie_model->get_movie_info($_POST["search-term"]);
+//                $data['genre'] = $genre;
+            $this->load->view('movie_genre_page.html',$data);
+        }
 
             // public function review_submit($page = 'insert')
 
