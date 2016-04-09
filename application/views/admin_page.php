@@ -2,6 +2,7 @@
 <?php
 if (isset($this->session->userdata['logged_in'])) {
 $username = ($this->session->userdata['logged_in']['username']);
+$id = ($this->session->userdata['logged_in']['id']);
 // $email = ($this->session->userdata['logged_in']['email']);
 } else {
 header("location: login");
@@ -15,7 +16,7 @@ header("location: login");
 <body>
 <div id="profile">
 <?php
-echo "Hello <b id='welcome'><i>" . $username . "</i> !</b>";
+echo "Hello <b id='welcome'><i>" . $username .$id. "</i> !</b>";
 echo "<br/>";
 echo "<br/>";
 echo "Welcome to Admin Page";

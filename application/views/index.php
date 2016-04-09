@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+$username = ($this->session->userdata['logged_in']['username']);
+$id = ($this->session->userdata['logged_in']['id']);
+// $email = ($this->session->userdata['logged_in']['email']);
+} else {
+$username = 'garbageName';
+$id = '1';
+// header("location: login");
+}
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,11 +97,11 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+								<li><i class="fa fa-user"></i> <?php echo "Hi, ".$username ?>  </li>
+								<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
+								<li><a href="<?php echo base_url();?>index.php/home/logout"><i class="fa fa-lock"></i> <?php echo "Logout" ?></a></li>
 							</ul>
 						</div>
 					</div>
@@ -137,13 +148,13 @@
 						<!-- <div class="search_box pull-right">
 							<input type="text" placeholder="Search Movie"/>
 						</div> -->
-						<form class="navbar-form" role="search" method="post" 
+						<form class="navbar-form" role="search" method="post"
                             action="<?php echo base_url().'index.php/home/movie_info_name';?>" >
                                 <div class="input-group add-on">
                                   <input class="form-control" placeholder="Search Movie" name="search-term" id="search-term" type="text">
-                              
+
                                     <button class="btn btn-small" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                  
+
                                </div>
                         </form>
 					</div>
