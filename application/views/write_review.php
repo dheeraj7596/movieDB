@@ -31,8 +31,11 @@
 <?php if (isset($message)) { ?>
 <CENTER><h3 style="color:green;"><?php echo $message;?></h3></CENTER><br>
 <?php } ?>
-<?php echo form_label('Title :'); ?> <br />
+<?php echo form_label('Heading :'); ?> <br />
 <?php echo form_input(array('id' => 'dheading', 'name' => 'dheading', 'required' => 'true', 'maxlength' => '50')); ?><br />
+
+<?php echo form_label('Movie id :'); ?> <br />
+<?php echo form_input(array('id' => 'dmovieid', 'name' => 'dmovieid', 'value' => $movieid, 'readonly' => 'readonly')); ?><br />
 
 <?php echo form_label('Body :'); ?> <?php echo form_error('demail'); ?><br />
 <?php echo form_textarea(array('id' => 'dbody', 'name' => 'dbody', 'required' => 'true')); ?><br />

@@ -57,6 +57,9 @@
     <option value="UK">UK</option>
 </select> <br />
 
+<br/><?php echo form_label('Year :'); ?> <br />
+<?php echo form_input(array('id' => 'dyear', 'name' => 'dyear', 'required' => 'true', 'maxlength' => '4')); ?><br />
+
 <br/><?php echo form_label('Image name :'); ?> <br />
 <?php echo form_input(array('id' => 'dimgname', 'name' => 'dimgname', 'required' => 'true', 'maxlength' => '50')); ?><br />
 

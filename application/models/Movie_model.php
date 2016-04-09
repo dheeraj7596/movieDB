@@ -9,12 +9,12 @@ class Movie_model extends CI_Model {
         {
                 if ($genre === FALSE)
                 {
-                        $query = $this->db->get('test1');
+                        $query = $this->db->get('movie');
                         return $query->result_array();
                 }
                 $this->db->select("*");
-                $this->db->from("test1");
-                $this->db->where('genre',$genre);
+                $this->db->from("movie");
+                $this->db->where('genre1',$genre);
                 $query = $this->db->get();
                 return $query->result_array();
         }
@@ -22,11 +22,11 @@ class Movie_model extends CI_Model {
         {       
                 if ($movieid === FALSE)
                 {
-                        $query = $this->db->get('test2');
+                        $query = $this->db->get('review_table');
                         return $query->result_array();
                 }
                 $this->db->select("*");
-                $this->db->from("test2");
+                $this->db->from("review_table");
                 $this->db->where('movieid',$movieid);
                 $query = $this->db->get();
                 return $query->result_array();
@@ -35,11 +35,11 @@ class Movie_model extends CI_Model {
         {
                 if ($reviewid === FALSE)
                 {
-                        $query = $this->db->get('test2');
+                        $query = $this->db->get('review_table');
                         return $query->result_array();
                 }
                 $this->db->select("*");
-                $this->db->from("test2");
+                $this->db->from("review_table");
                 $this->db->where('reviewid',$reviewid);
                 $query = $this->db->get();
                 return $query->result_array();
@@ -47,7 +47,7 @@ class Movie_model extends CI_Model {
         public function review_insert($data)
         {
 // Inserting in Table(review) of Database(Movie)
-                $this->db->insert('test2', $data);
+                $this->db->insert('review_table', $data);
         }
         public function get_movie_info($name)
         {
@@ -173,6 +173,19 @@ class Movie_model extends CI_Model {
         public function movie_insert($data)
         {
 // Inserting in Table(review) of Database(Movie)
-                $this->db->insert('movie', $data);
+                $condition = "title =" . "'" . $data['title'] . "' AND " . "genre1 =" . "'" . $data['genre1'] . "' AND " ."language =" . "'" . $data['language'] . "' AND " ."country =" . "'" . $data['country'] . "' AND " ."image_name =" . "'" . $data['image_name']     . "'";
+                $this->db->select("*");
+                $this->db->from("movie");
+                $this->db->where($condition);
+                $query = $this->db->get();
+                if ($query->num_rows() == 0) 
+                {
+                     $this->db->insert('movie', $data);
+                     return true;
+                }
+                else
+                {
+                    return false;
+                }      
         }
 }

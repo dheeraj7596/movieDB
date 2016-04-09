@@ -26,14 +26,13 @@ class Home extends CI_Controller {
 //		$this->load->view('template/header',$data);
 //		$this->load->view('displayBook',$data);
 //		$this->load->view('template/footer');
-                $this->load->view('index.php');
+                $this->load->view('login_form.php');
 	}
             public function genre($genre)
             {
                 $data['movieDetails'] = $this->movie_model->get_movie_by_genre($genre);
                 $data['genre'] = $genre;
                 $this->load->view('movie_genre_page.html',$data);
-//                echo implode(" ",$data['bookdetails'][1]);
             }
 
             public function review_movie($movieid)
@@ -65,11 +64,18 @@ class Home extends CI_Controller {
 //Setting values for tabel columns
                     $data = array(
                     'heading' => $this->input->post('dheading'),
+                    'movieid' => $this->input->post('dmovieid'),
                     'body' => $this->input->post('dbody'),
+                    'rating' => $this->input->post('drating')
                     );
-                    $data['rating'] = 9;
-                    $data['userid'] = 1;
-                    $data['movieid'] = 2;
+                    // $data['rating'] = 9;
+                //     if(isset()){
+                //     $this->load->view('admin_page');
+                // }else{
+                //     $this->load->view('login_form');
+                // }
+                    $data['userid'] = $this->session->userdata['logged_in']['id'];
+                    // $data['movieid'] = ;
                     $this->movie_model->review_insert($data);
                     $data['message'] = 'Data Inserted Successfully';
                     //Loading View
@@ -77,9 +83,10 @@ class Home extends CI_Controller {
                 }
 
             }
-            public function new_review_page()
+            public function new_review_page($movieid)
             {
-                $this->load->view('write_review');
+                $data['movieid'] = $movieid;
+                $this->load->view('write_review', $data);
             }
             public function read_review($reviewid)
             {
@@ -195,12 +202,21 @@ class Home extends CI_Controller {
                 'genre1' => $this->input->post('genre'),
                 'language' => $this->input->post('language'),
                 'country' => $this->input->post('country'),
+                'year' => $this->input->post('dyear'),
                 'image_name' => $this->input->post('dimgname')
                 );
-                $this->movie_model->movie_insert($data);
-                $data['message'] = 'Data Inserted Successfully';
+                if($this->movie_model->movie_insert($data))
+                {
+                    $data['message'] = 'Data Inserted Successfully';
+                    $this->load->view('index');
+                }
+                else
+                {
+                    $data['message'] = 'Movie already present in database';
+                    $this->load->view('add_movie', $data);
+                }
                 //Loading View
-                $this->load->view('index');
+                
             }
 
 
