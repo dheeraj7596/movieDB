@@ -134,9 +134,18 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
+						<!-- <div class="search_box pull-right">
+							<input type="text" placeholder="Search Movie"/>
+						</div> -->
+						<form class="navbar-form" role="search" method="post" 
+                            action="<?php echo base_url().'index.php/home/movie_info_name';?>" >
+                                <div class="input-group add-on">
+                                  <input class="form-control" placeholder="Search Movie" name="search-term" id="search-term" type="text">
+                              
+                                    <button class="btn btn-small" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                  
+                               </div>
+                        </form>
 					</div>
 				</div>
 			</div>
