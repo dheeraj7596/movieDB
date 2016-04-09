@@ -103,16 +103,17 @@ class Home extends CI_Controller {
         public function new_user_registration() {
 
             // Check validation for user input in SignUp form
-            $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('username', 'Username', 'trim|required');
+            // $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('registration_form');
             } else {
                 $data = array(
                 'username' => $this->input->post('username'),
-                'user_email' => $this->input->post('email_value'),
-                'password' => $this->input->post('password')
+                'password' => $this->input->post('password'),
+                'age' => $this->input->post('age'),
+                'country' => $this->input->post('country')
                 );
                 $result = $this->movie_model->registration_insert($data);
                 if ($result == TRUE) {
