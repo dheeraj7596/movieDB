@@ -57,7 +57,7 @@ class Home extends CI_Controller {
 //Validating Body Field
                 $this->form_validation->set_rules('dbody', 'body', 'required|max_length[1000]');
 
-                
+
                 if ($this->form_validation->run() == FALSE) {
                     $data['message'] = 'Review not written';
                     $this->load->view('write_review', $data);
@@ -117,7 +117,6 @@ class Home extends CI_Controller {
                 }
             }
         }
-
         // Check for user login process
         public function user_login_process() {
 
@@ -175,10 +174,34 @@ class Home extends CI_Controller {
         public function movie_info_name() 
         {
             $data['movieDetails'] = $this->movie_model->get_movie_info($_POST["search-term"]);
-//                $data['genre'] = $genre;
             $this->load->view('movie_genre_page.html',$data);
         }
+        public function new_movie()
+        {
+            $this->load->view('add_movie');
+        }
+        public function add_new_movie()
+        {
+            $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+            $this->form_validation->set_rules('dtitle', 'title', 'required|max_length[50]');
 
-            // public function review_submit($page = 'insert')
+            if ($this->form_validation->run() == FALSE) {
+                $data['message'] = 'Movie not added';
+                $this->load->view('add_movie', $data);
+            } else {
+                $data = array(
+                'title' => $this->input->post('dtitle'),
+                'genre1' => $this->input->post('genre'),
+                'language' => $this->input->post('language'),
+                'country' => $this->input->post('country'),
+                'image_name' => $this->input->post('dimgname')
+                );
+                $this->movie_model->movie_insert($data);
+                $data['message'] = 'Data Inserted Successfully';
+                //Loading View
+                $this->load->view('index');
+            }
 
+
+        }
 }
