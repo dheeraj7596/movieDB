@@ -93,6 +93,7 @@ class Home extends CI_Controller {
             public function read_review($reviewid)
             {
                 $data['read'] = $this->movie_model->get_full_review($reviewid);
+                $data['comments'] = $this->movie_model->get_comments($reviewid);
                 //$this->load->view('full_review.html',$data);
                 $this->load->view('full_review2.html',$data);
             }
@@ -255,5 +256,14 @@ class Home extends CI_Controller {
             }
 
 
+        }
+        public function your_review($userid)
+        {
+            $data['reviews'] = $this->movie_model->get_my_review($userid);
+            $this->load->view('movie_review.html',$data);
+        }
+        public function write_comment($message)
+        {
+            $this->movie_model->store_my_comment($message);
         }
 }

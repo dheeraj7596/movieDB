@@ -49,7 +49,7 @@ class Movie_model extends CI_Model {
 // Inserting in Table(review) of Database(Movie)
                 $this->db->insert('review_table', $data);
         }
-        public function get_movie_info($name)
+        public function get_movie_info($name = FALSE)
         {
             if ($name === FALSE)
             {
@@ -62,6 +62,87 @@ class Movie_model extends CI_Model {
             $query = $this->db->get();
             return $query->result_array();
         }
+        public function get_my_review($userid = FALSE)
+        {
+            if ($userid === FALSE)
+            {
+                $query = $this->db->get('review_table');
+                return $query->result_array();
+            }
+            $this->db->select("*");
+            $this->db->from("review_table");
+            $this->db->where('userid',$userid);
+            $query = $this->db->get();
+            return $query->result_array();
+        }
+        public function get_comments($reviewid = FALSE)
+        {
+            if ($reviewid === FALSE)
+            {
+                $query = $this->db->get('comment');
+                return $query->result_array();
+            }
+            $sql = "SELECT C.id, C.reviewid, U.username, C.body FROM comment AS C, test AS U WHERE C.reviewid=? AND U.id=C.userid";
+            // $this->db->select("*");
+            // $this->db->from("comment");
+            // $this->db->where('reviewid',$reviewid);
+            // $query = $this->db->get();
+            $query=$this->db->query($sql,$reviewid);
+            return $query->result_array();
+        }
+        // public function get_book_info($isbn = FALSE)
+        // {
+        //         if ($isbn === FALSE)
+        //         {
+        //                 $query = $this->db->get('bookdetails');
+        //                 return $query->result_array();
+        //         }
+        //         $this->db->select("*");
+        //         $this->db->from("bookdetails");
+        //         $this->db->where('isbn',$isbn);
+        //         $query = $this->db->get();
+        //         return $query->result_array();
+        // }
+
+        // public function get_book_info_name($title = FALSE)
+        // {
+        //         if ($title === FALSE)
+        //         {
+        //                 $query = $this->db->get('bookdetails');
+        //                 return $query->result_array();
+        //         }
+        //         $this->db->select("*");
+        //         $this->db->from("bookdetails");
+        //         $this->db->like('title',$title);
+        //         $query = $this->db->get();
+        //         return $query->result_array();
+        // }
+        // public function get_author_books($author = FALSE)
+        // {
+        //         if ($author === FALSE)
+        //         {
+        //                 $query = $this->db->get('bookdetails');
+        //                 return $query->result_array();
+        //         }
+        //         $this->db->select("*");
+        //         $this->db->from("bookdetails");
+        //         $this->db->where('author',urldecode($author));
+        //         $query = $this->db->get();
+        //         return $query->result_array();
+        // }
+        // public function get_author_info($author = FALSE)
+        // {
+        //         if ($author === FALSE)
+        //         {
+        //                 $query = $this->db->get('authordetails');
+        //                 return $query->result_array();
+        //         }
+        //         $this->db->select("*");
+        //         $this->db->from("authordetails");
+        //         $this->db->where('name',urldecode($author));
+        //         $query = $this->db->get();
+        //         return $query->result_array();
+        // }
         // Insert registration data in database
         public function registration_insert($data) {
 
@@ -155,5 +236,9 @@ class Movie_model extends CI_Model {
                 {
                     return false;
                 }
+        }
+        public function store_my_comment($message)
+        {
+            $this->db->insert('review_table', $data);
         }
 }
