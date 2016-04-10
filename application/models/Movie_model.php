@@ -53,12 +53,12 @@ class Movie_model extends CI_Model {
         {
             if ($name === FALSE)
             {
-                $query = $this->db->get('moviedetails');
+                $query = $this->db->get('movie');
                 return $query->result_array();
             }
             $this->db->select("*");
-            $this->db->from("test1");
-            $this->db->like('name',$name);
+            $this->db->from("movie");
+            $this->db->like('title',$name);
             $query = $this->db->get();
             return $query->result_array();
         }
