@@ -140,7 +140,7 @@ $id = '1';
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li>
-								<li><a href="404.html">404</a></li>
+								<li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
 								<li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
 							</ul>
 						</div>

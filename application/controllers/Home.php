@@ -181,6 +181,37 @@ class Home extends CI_Controller {
             $this->load->view('login.html', $data);
         }
 
+        public function add_new_person(){
+          $this->load->view('addperson.html');
+        }
+        // Add new person in person table
+        public function new_person() {
+
+            // Check validation for user input in SignUp form
+            $this->form_validation->set_rules('name', 'Name', 'trim|required');
+            $this->form_validation->set_rules('country', 'Country', 'trim|required');
+            $this->form_validation->set_rules('age', 'Age', 'trim|required');
+            $this->form_validation->set_rules('picture', 'Picture', 'trim|required');
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('addperson.html');
+            } else {
+                $data = array(
+                'name' => $this->input->post('name'),
+                'picture' => $this->input->post('picture'),
+                'age' => $this->input->post('age'),
+                'country' => $this->input->post('country')
+                );
+                $result = $this->movie_model->person_insert($data);
+                if ($result == TRUE) {
+                    // $data['message_display'] = 'Registration Successfully !';
+                    $this->load->view('login.html', $data);
+                } else {
+                    $data['message_display'] = 'Name already exist!';
+                    $this->load->view('addperson.html', $data);
+                }
+            }
+        }
+
         public function movie_info_name()
         {
             $data['movieDetails'] = $this->movie_model->get_movie_info($_POST["search-term"]);
