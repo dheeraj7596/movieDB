@@ -22,7 +22,61 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-57-precomposed.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/price-range.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/animate.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="<?php echo base_url();?>assets/js/html5shiv.js"></script>
+    <script src="<?php echo base_url();?>assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 40px;
+}
+</style>
 <body>
 
 <div id="container">
@@ -35,7 +89,7 @@
 <?php echo form_input(array('id' => 'dheading', 'name' => 'dheading', 'required' => 'true', 'maxlength' => '50')); ?><br />
 
 <?php echo form_label('Movie id :'); ?> <br />
-<?php echo form_input(array('id' => 'dmovieid', 'name' => 'dmovieid', 'value' => $movieid, 'readonly' => 'readonly')); ?><br />
+<?php echo form_input(array('id' => 'dmovieid', 'name' => 'dmovieid', 'value' => $movieid, 'readonly' => 'true')); ?><br />
 
 <?php echo form_label('Body :'); ?> <?php echo form_error('demail'); ?><br />
 <?php echo form_textarea(array('id' => 'dbody', 'name' => 'dbody', 'required' => 'true')); ?><br />
