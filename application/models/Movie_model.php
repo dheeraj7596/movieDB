@@ -137,6 +137,27 @@ class Movie_model extends CI_Model {
             }
         }
 
+        // Insert person data in database
+        public function person_insert($data) {
+
+            // Query to check whether username already exist or not
+            $condition = "name =" . "'" . $data['name'] . "'";
+            $this->db->select('*');
+            $this->db->from('person');
+            $this->db->where($condition);
+            $this->db->limit(1);
+            $query = $this->db->get();
+            if ($query->num_rows() == 0) {
+
+            // Query to insert data in database
+            $this->db->insert('person', $data);
+            if ($this->db->affected_rows() > 0) {
+            return true;
+            }
+            } else {
+            return false;
+            }
+        }
         // Read data using username and password
         public function login($data) {
 
@@ -178,7 +199,7 @@ class Movie_model extends CI_Model {
                 $this->db->from("movie");
                 $this->db->where($condition);
                 $query = $this->db->get();
-                if ($query->num_rows() == 0) 
+                if ($query->num_rows() == 0)
                 {
                      $this->db->insert('movie', $data);
                      return true;
@@ -186,6 +207,6 @@ class Movie_model extends CI_Model {
                 else
                 {
                     return false;
-                }      
+                }
         }
 }
