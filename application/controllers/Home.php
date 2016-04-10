@@ -134,7 +134,7 @@ class Home extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE) {
                 if(isset($this->session->userdata['logged_in'])){
-                    $this->load->view('admin_page');
+                    $this->load->view('index');
                 }else{
                     $this->load->view('login_form');
                 }
@@ -217,7 +217,7 @@ class Home extends CI_Controller {
                     $this->load->view('add_movie', $data);
                 }
                 //Loading View
-                
+
             }
 
 
