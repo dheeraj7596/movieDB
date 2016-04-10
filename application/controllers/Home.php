@@ -39,6 +39,7 @@ class Home extends CI_Controller {
             {
                 $data['reviews'] = $this->movie_model->get_review_by_movie($movieid);
                 $this->load->view('movie_review.html',$data);
+                // $this->load->view('blog-single.html',$data);
             }
 
             // public function read_review($reviewid)
@@ -91,7 +92,8 @@ class Home extends CI_Controller {
             public function read_review($reviewid)
             {
                 $data['read'] = $this->movie_model->get_full_review($reviewid);
-                $this->load->view('full_review.html',$data);
+                //$this->load->view('full_review.html',$data);
+                $this->load->view('full_review2.html',$data);
             }
 
         // Show registration page

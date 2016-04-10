@@ -126,7 +126,7 @@ $id = '1';
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/index">Home</a></li>
                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
@@ -192,9 +192,6 @@ $id = '1';
                 </td>
                 <td class="view_full_review" -->
                     <a href="<?php echo base_url().'index.php/home/read_review/'.$review_item['reviewid'];?>" class="btn" type="button">Read</a>
-                </td>
-                <td class="write_review" -->
-                    <a href="<?php echo base_url().'index.php/home/new_review_page/'.$review_item['movieid'];?>" class="btn" type="button">write new</a>
                 </td>
                 <!-- <tr>
                   <td class="review_body">
