@@ -68,8 +68,9 @@ $id = '1';
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a>
-						</div>
+							<!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
+              <a href="index.html"><i class="fa fa-film fa-4x" ></i></a>
+            </div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
@@ -126,7 +127,7 @@ $id = '1';
 								<li><a href="index.html" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="<?php echo base_url();?>index.php/home/genre/Romance">Romance</a></li>
+                                          <li><a href="<?php echo base_url();?>index.php/home/genre/Romance">Romance</a></li>
 										<li><a href="product-details.html">Product Details</a></li>
 										<li><a href="checkout.html">Checkout</a></li>
 										<li><a href="cart.html">Cart</a></li>
