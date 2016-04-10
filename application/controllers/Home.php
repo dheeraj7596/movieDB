@@ -52,10 +52,10 @@ class Home extends CI_Controller {
             {
                 $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-//Validating Heading Field
+                //Validating Heading Field
                 $this->form_validation->set_rules('dheading', 'heading', 'required');
 
-//Validating Body Field
+                //Validating Body Field
                 $this->form_validation->set_rules('dbody', 'body', 'required|max_length[1000]');
 
 
@@ -63,7 +63,7 @@ class Home extends CI_Controller {
                     $data['message'] = 'Review not written';
                     $this->load->view('write_review', $data);
                 } else {
-//Setting values for tabel columns
+                  //Setting values for tabel columns
                     $data = array(
                     'heading' => $this->input->post('dheading'),
                     'movieid' => $this->input->post('dmovieid'),

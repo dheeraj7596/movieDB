@@ -62,59 +62,6 @@ class Movie_model extends CI_Model {
             $query = $this->db->get();
             return $query->result_array();
         }
-        // public function get_book_info($isbn = FALSE)
-        // {
-        //         if ($isbn === FALSE)
-        //         {
-        //                 $query = $this->db->get('bookdetails');
-        //                 return $query->result_array();
-        //         }
-        //         $this->db->select("*");
-        //         $this->db->from("bookdetails");
-        //         $this->db->where('isbn',$isbn);
-        //         $query = $this->db->get();
-        //         return $query->result_array();
-        // }
-
-        // public function get_book_info_name($title = FALSE)
-        // {
-        //         if ($title === FALSE)
-        //         {
-        //                 $query = $this->db->get('bookdetails');
-        //                 return $query->result_array();
-        //         }
-        //         $this->db->select("*");
-        //         $this->db->from("bookdetails");
-        //         $this->db->like('title',$title);
-        //         $query = $this->db->get();
-        //         return $query->result_array();
-        // }
-        // public function get_author_books($author = FALSE)
-        // {
-        //         if ($author === FALSE)
-        //         {
-        //                 $query = $this->db->get('bookdetails');
-        //                 return $query->result_array();
-        //         }
-        //         $this->db->select("*");
-        //         $this->db->from("bookdetails");
-        //         $this->db->where('author',urldecode($author));
-        //         $query = $this->db->get();
-        //         return $query->result_array();
-        // }
-        // public function get_author_info($author = FALSE)
-        // {
-        //         if ($author === FALSE)
-        //         {
-        //                 $query = $this->db->get('authordetails');
-        //                 return $query->result_array();
-        //         }
-        //         $this->db->select("*");
-        //         $this->db->from("authordetails");
-        //         $this->db->where('name',urldecode($author));
-        //         $query = $this->db->get();
-        //         return $query->result_array();
-        // }
         // Insert registration data in database
         public function registration_insert($data) {
 
@@ -193,7 +140,7 @@ class Movie_model extends CI_Model {
         }
         public function movie_insert($data)
         {
-// Inserting in Table(review) of Database(Movie)
+          // Inserting in Table(review) of Database(Movie)
                 $condition = "title =" . "'" . $data['title'] . "' AND " . "genre1 =" . "'" . $data['genre1'] . "' AND " ."language =" . "'" . $data['language'] . "' AND " ."country =" . "'" . $data['country'] . "' AND " ."image_name =" . "'" . $data['image_name']     . "'";
                 $this->db->select("*");
                 $this->db->from("movie");
