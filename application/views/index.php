@@ -142,6 +142,7 @@ $id = '1';
                                 </li>
 								<li><a href="404.html">404</a></li>
 								<li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
+								<li><a href="<?php echo base_url();?>index.php/home/your_review">Your Reviews</a></li>
 							</ul>
 						</div>
 					</div>
