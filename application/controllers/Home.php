@@ -346,6 +346,18 @@ class Home extends CI_Controller {
                 echo "Already present in watch list";
             }
         }
+        public function remove_watchlist()
+        {
+            $data = array(
+                'movieid'=> $this->input->post('movieid')
+                );
+            $data['userid'] = $this->session->userdata['logged_in']['id'];
+            if($this->movie_model->remove_from_watchlist($data))
+            {
+                $data['message'] = 'Movie removed from watchlist';
+                $this->show_movie($data['movieid']);
+            }
+        }
         public function show_movie($movieid)
         {
             $var = array(
