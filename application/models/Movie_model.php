@@ -229,6 +229,13 @@ class Movie_model extends CI_Model {
             return false;
             }
         }
+        public function get_my_watchlist($id)
+        {
+            // $sql = "SELECT C.id, C.reviewid, U.username, C.body FROM comment AS C, test AS U WHERE C.reviewid=? AND U.id=C.userid";
+            $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, watchlist as W Where M.id=W.movieid and W.userid=?";
+            $query=$this->db->query($sql,$id);
+            return $query->result_array();          
+        }
         // Insert person data in database
         public function person_insert($data) {
 
