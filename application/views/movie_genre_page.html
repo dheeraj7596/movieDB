@@ -169,7 +169,7 @@ $id = '1';
     <div class="container">
       <div class="breadcrumbs">
         <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
+          <li><a href="<?php echo base_url();?>index.php/home/index">Home</a></li>
           <li class="active">Movie</li>
         </ol>
       </div>
@@ -189,7 +189,7 @@ $id = '1';
                 <tr>
                 <!--<li class="span3">-->
                     <td class="movie_name">
-                        <?php echo $movie_item['title'];?>
+                        <a href="<?php echo base_url().'index.php/home/show_movie/'.$movie_item['id'];?>" class="btn" type="button"><?php echo $movie_item['title'];?></a>
                     </td>
                     <td class="movie_year">
                         <?php echo $movie_item['year'];?>

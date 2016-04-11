@@ -280,4 +280,14 @@ class Home extends CI_Controller {
               $this->read_review($data['reviewid']);
             }
         }
+        public function show_movie($movieid)
+        {
+            $data['movieDetails'] = $this->movie_model->get_movie_info_by_id($movieid);
+            $this->load->view('product-details.html',$data);
+        }
+        // public function story($movieid)
+        // {
+        //     $data['story'] = $this->movie_model->get_story($movieid);
+        //     $this->load->view('product-details.html',$data);   
+        // }
 }

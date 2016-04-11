@@ -127,12 +127,12 @@ $id = '1';
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
                 <li><a href="<?php echo base_url();?>index.php/home/index">Home</a></li>
-                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                <li class="dropdown"><a href="#">Genre<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                    <li><a href="product-details.html">Product Details</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="cart.html" class="active">Cart</a></li>
+                                        <li><a href="<?php echo base_url();?>index.php/home/genre/Romance">Romance</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/home/genre/Thriller">Thriller</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/home/genre/Drama">Drama</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/home/genre/Horror">Horror</a></li>
                     <li><a href="login.html">Login</a></li>
                                     </ul>
                                 </li>
@@ -148,9 +148,15 @@ $id = '1';
             </div>
           </div>
           <div class="col-sm-3">
-            <div class="search_box pull-right">
-              <input type="text" placeholder="Search"/>
-            </div>
+            <form class="navbar-form" role="search" method="post"
+                            action="<?php echo base_url().'index.php/home/movie_info_name';?>" >
+                                <div class="input-group add-on">
+                                  <input class="form-control" placeholder="Search Movie" name="search-term" id="search-term" type="text">
+
+                                    <button class="btn btn-small" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+
+                               </div>
+                        </form>
           </div>
         </div>
       </div>
@@ -161,8 +167,8 @@ $id = '1';
     <div class="container">
       <div class="breadcrumbs">
         <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li class="active">Shopping Cart</li>
+          <li><a href="<?php echo base_url();?>index.php/home/index">Home</a></li>
+          <li class="active">Reviews</li>
         </ol>
       </div>
       <div class="table-responsive cart_info">
