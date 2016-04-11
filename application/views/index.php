@@ -70,6 +70,7 @@ $id = '1';
 						<div class="logo pull-left">
 							<!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
               <a href="<?php echo base_url();?>index.php/home/index" class="active"><i class="fa fa-film fa-4x" ></i></a>
+              <h1><span>F</span>ILMY</h1>
             </div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -181,8 +182,8 @@ $id = '1';
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
+									<h1><span>F</span>ILMY</h1>
+									<h2>Your cinema social network</h2>
 									<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> -->
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
@@ -193,8 +194,8 @@ $id = '1';
 							</div>
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
+                  <h1><span>F</span>ILMY</h1>
+									<h2>Your cinema social network</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
@@ -206,8 +207,8 @@ $id = '1';
 
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
+                  <h1><span>F</span>ILMY</h1>
+									<h2>Your cinema social network</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
