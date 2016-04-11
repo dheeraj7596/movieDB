@@ -381,9 +381,9 @@ class Home extends CI_Controller {
 
             $this->load->view('product-details.html',$data);
         }
-        // public function story($movieid)
-        // {
-        //     $data['story'] = $this->movie_model->get_story($movieid);
-        //     $this->load->view('product-details.html',$data);
-        // }
+        public function your_watchlist($id)
+        {
+            $data['movieDetails'] = $this->movie_model->get_my_watchlist($id);
+            $this->load->view('movie_genre_page.html',$data);
+        }
 }
