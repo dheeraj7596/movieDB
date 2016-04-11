@@ -181,10 +181,10 @@ $id = '1';
 										<li><i class="fa fa-calendar"></i> DEC 5, 2013</li> -->
 									</ul>
 									<span class='ratings'>
-									<?php for ($x = 0; $x < $read_item['rating']; $x++): ?> 
+									<?php for ($x = 0; $x < $read_item['rating']; $x++): ?>
 										<i class="fa fa-star star-color"></i>
 									<?php endfor; ?>
-									<?php for ($x = $read_item['rating']; $x < 10; $x++): ?> 
+									<?php for ($x = $read_item['rating']; $x < 10; $x++): ?>
 										<i class="fa fa-star star-white"></i>
 									<?php endfor; ?>
 									</span>
@@ -204,7 +204,7 @@ $id = '1';
 								<p>
 									Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 								</p> -->
-							
+
               					<tr>
 				                <!--<li class="span3">-->
 				                <td class="view_review">
@@ -250,7 +250,7 @@ $id = '1';
 						<!-- <a class="pull-left" href="#">
 							<img class="media-object" src="<?php echo base_url();?>assets/images/blog/man-one.jpg" alt="">
 						</a> -->
-						
+
 							<div class="media-body">
 								<!-- <h3><?php echo $read_item['heading'];?></h3> -->
 								<ul class="sinlge-post-meta">
@@ -270,7 +270,7 @@ $id = '1';
 									<a class="btn btn-primary" href="">Other Posts</a>
 								</div>
 							</div>
-						
+
 					</div><!--Comments-->
 					<?php endforeach; ?>
 					<!-- <div class="response-area">
@@ -325,33 +325,22 @@ $id = '1';
 						<div class="row">
 							<div class="col-sm-4">
 								<h2>Comment here..</h2>
-								<!-- <form>
-									<div class="blank-arrow">
-										<label>Your Name</label>
-									</div>
-									<span>*</span>
-									<input type="text" placeholder="write your name...">
-									<div class="blank-arrow">
-										<label>Email Address</label>
-									</div>
-									<span>*</span>
-									<input type="email" placeholder="your email address...">
-									<div class="blank-arrow">
-										<label>Web Site</label>
-									</div>
-									<input type="email" placeholder="current city...">
-								</form> -->
+								<form method="post" action="<?php echo base_url().'index.php/home/write_comment';?>">
+                    <div class="text-area">
+                      <div class="blank-arrow">
+                        <label>Your Comment</label>
+                      </div>
+                      <span></span>
+                      <textarea name="message" rows="11"></textarea>
+                      <input type="hidden" name="userid" value="<?php echo $id;?>" />
+                      <?php foreach ($read as $readitem) { ?>
+                      <input type="hidden" name="reviewid" value="<?php echo $readitem['reviewid'];?>"/>
+                      <?php } ?>
+                      <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </div>
+								</form>
 							</div>
-							<div class="col-sm-8">
-								<div class="text-area">
-									<div class="blank-arrow">
-										<label>Your Comment</label>
-									</div>
-									<span></span>
-									<textarea name="message" rows="11"></textarea>
-									<a class="btn btn-primary" href="<?php echo base_url();?>index.php/home/write_comment">>post comment</a>
-								</div>
-							</div>
+
 						</div>
 					</div><!--/Repaly Box-->
 				</div>

@@ -262,8 +262,22 @@ class Home extends CI_Controller {
             $data['reviews'] = $this->movie_model->get_my_review($userid);
             $this->load->view('movie_review.html',$data);
         }
-        public function write_comment($message)
+        public function write_comment()
         {
-            $this->movie_model->store_my_comment($message);
+          // if (isset($this->session->userdata['logged_in'])) {
+          // $id = ($this->session->userdata['logged_in']['id']);
+          // } else {
+          // $id = '2';
+          // }
+          $data = array(
+          'body' => $this->input->post('message'),
+          // 'userid' => $this->input->$id,
+          'reviewid' => $this->input->post('reviewid')
+          );
+          $data['userid'] = $this->session->userdata['logged_in']['id'];
+            if($this->movie_model->store_my_comment($data))
+            {
+              $this->read_review($data['reviewid']);
+            }
         }
 }

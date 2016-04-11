@@ -237,8 +237,13 @@ class Movie_model extends CI_Model {
                     return false;
                 }
         }
-        public function store_my_comment($message)
+        public function store_my_comment($data)
         {
-            $this->db->insert('review_table', $data);
+            $this->db->insert('comment', $data);
+            if ($this->db->affected_rows() > 0) {
+            return true;
+            } else {
+              return false;
+            }
         }
 }
