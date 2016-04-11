@@ -143,6 +143,7 @@ $id = '1';
 								<li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
 								<li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
 								<li><a href="<?php echo base_url().'index.php/home/your_review/'.$id;?>">My Reviews</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li>
 								<!-- <li><a href="<?php echo base_url();?>index.php/home/your_review">Your Reviews</a></li> -->
 							</ul>
 						</div>

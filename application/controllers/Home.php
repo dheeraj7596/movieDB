@@ -215,6 +215,56 @@ class Home extends CI_Controller {
             }
         }
 
+        public function add_work(){
+          $this->load->view('addwork.html');
+        }
+        // Add new person in person table
+        public function new_work() {
+
+            // Check validation for user input in SignUp form
+            $this->form_validation->set_rules('moviename', 'Movie Name', 'trim|required');
+            $this->form_validation->set_rules('personname', 'Person Name', 'trim|required');
+            // $this->form_validation->set_rules('age', 'Age', 'trim|required');
+            $this->form_validation->set_rules('plays', 'Plays', 'trim');
+            if ($this->form_validation->run() == FALSE) {
+                echo "failed 1";
+                $this->load->view('addwork.html');
+            } else {
+                // echo $this->input->post('moviename');
+                $movieid = $this->movie_model->get_movieid($this->input->post('moviename'));
+                $id1 = $movieid[0]['id'];
+                if($movieid == 0){
+                  echo "failed 1";
+                  $data['message_display'] = 'Movie Name not found!';
+                  $this->load->view('addperson.html', $data);
+                  return;
+                }
+                $personid = $this->movie_model->get_personid($this->input->post('personname'));
+                $id2 = $personid[0]['id'];
+                if($id2 == NULL){
+                  echo "failed 1";
+                  $data['message_display'] = 'Perons Name not found!';
+                  $this->load->view('addwork.html', $data);
+                  return;
+                }
+                $data = array(
+                'movieid' => $id1,
+                'personid' => $id2,
+                'role' => $this->input->post('role'),
+                'plays' => $this->input->post('plays')
+                );
+                $result = $this->movie_model->new_work($data);
+                if ($result == TRUE) {
+                    // $data['message_display'] = 'Registration Successfully !';
+                    $this->load->view('index.php', $data);
+                } else {
+                  echo "failed 1";
+                    $data['message_display'] = 'Name already exist!';
+                    $this->load->view('addwork.html', $data);
+                }
+            }
+        }
+
         public function movie_info_name()
         {
             $data['movieDetails'] = $this->movie_model->get_movie_info($_POST["search-term"]);
@@ -308,11 +358,11 @@ class Home extends CI_Controller {
 
                 //     );
                 $data['message'] = 'Already in watchlist';
-                $data['flag'] = 1;             
+                $data['flag'] = 1;
             }
             else
             {
-                $data['message'] = 'Add to watchlist';                
+                $data['message'] = 'Add to watchlist';
                 $data['flag'] = 0;
             }
             $data['movieDetails'] = $this->movie_model->get_movie_info_by_id($movieid);
@@ -322,6 +372,6 @@ class Home extends CI_Controller {
         // public function story($movieid)
         // {
         //     $data['story'] = $this->movie_model->get_story($movieid);
-        //     $this->load->view('product-details.html',$data);   
+        //     $this->load->view('product-details.html',$data);
         // }
 }

@@ -232,6 +232,61 @@ class Movie_model extends CI_Model {
             return false;
             }
         }
+        // Insert work data in database
+        public function new_work($data) {
+
+            // Query to check whether already exist or not
+            $condition = "movieid =" . "'" . $data['movieid'] ."' AND " . "personid =" . "'" . $data['personid'] . "'";
+            $this->db->select('*');
+            $this->db->from('work');
+            $this->db->where($condition);
+            $this->db->limit(1);
+            $query = $this->db->get();
+            if ($query->num_rows() == 0) {
+
+            // Query to insert data in database
+            $this->db->insert('work', $data);
+            if ($this->db->affected_rows() > 0) {
+            return true;
+            }
+            } else {
+            return false;
+            }
+        }
+        public function get_movieid($moviename){
+          $this->db->select("id");
+          $this->db->from("movie");
+          $this->db->where('title',$moviename);
+          $query = $this->db->get();
+          // echo $query;
+          if ($query->num_rows() == 0) {
+            return 0;
+          }
+          else{
+          return $query->result_array();
+          // foreach($query->result() as $row) {
+          //     return $row->id;
+          // }
+        }
+        }
+        public function get_personid($personname){
+          $this->db->select("id");
+          $this->db->from("person");
+          $this->db->where('name',$personname);
+          $query = $this->db->get();
+          return $query->result_array();
+          if ($query->num_rows() == 0) {
+            return 0;
+          }
+          else{
+          return $query->result_array();
+          // foreach($query->result() as $row) {
+          //     return $row("id");
+          // }
+          //
+          // return $result;
+        }
+        }
         // Read data using username and password
         public function login($data) {
 
