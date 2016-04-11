@@ -280,9 +280,43 @@ class Home extends CI_Controller {
               $this->read_review($data['reviewid']);
             }
         }
+        public function add_watchlist()
+        {
+            $data = array(
+                'movieid'=> $this->input->post('movieid')
+                );
+            $data['userid'] = $this->session->userdata['logged_in']['id'];
+            if($this->movie_model->add_to_watchlist($data))
+            {
+                $data['message'] = 'Movie added to watchlist';
+                $this->show_movie($data['movieid']);
+            }
+            else
+            {
+                echo "Already present in watch list";
+            }
+        }
         public function show_movie($movieid)
         {
+            $var = array(
+                'movieid'=> $movieid
+                );
+            $var['userid']=$this->session->userdata['logged_in']['id'];
+            if ($this->movie_model->want_to_see($var))
+            {
+                // $data = array(
+
+                //     );
+                $data['message'] = 'Already in watchlist';
+                $data['flag'] = 1;             
+            }
+            else
+            {
+                $data['message'] = 'Add to watchlist';                
+                $data['flag'] = 0;
+            }
             $data['movieDetails'] = $this->movie_model->get_movie_info_by_id($movieid);
+
             $this->load->view('product-details.html',$data);
         }
         // public function story($movieid)

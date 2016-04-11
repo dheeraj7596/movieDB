@@ -90,6 +90,20 @@ class Movie_model extends CI_Model {
             $query = $this->db->get();
             return $query->result_array();
         }
+        public function want_to_see($data)
+        {
+            $condition = "userid =" . "'" . $data['userid'] . "' AND " . "movieid =" . "'" . $data['movieid'] . "'";
+            $this->db->select('*');
+            $this->db->from('watchlist');
+            $this->db->where($condition);
+            $query = $this->db->get();
+            if ($query->num_rows() == 0) {
+               return false;
+            }
+            else {
+               return true;
+            }
+        }
         public function get_comments($reviewid = FALSE)
         {
             if ($reviewid === FALSE)
@@ -179,7 +193,24 @@ class Movie_model extends CI_Model {
             return false;
             }
         }
+        public function add_to_watchlist($data)
+        {
+            $condition = "userid =" . "'" . $data['userid'] . "' AND " . "movieid =" . "'" . $data['movieid'] . "'";
+            $this->db->select('*');
+            $this->db->from('watchlist');
+            $this->db->where($condition);
+            $query = $this->db->get();
+            if ($query->num_rows() == 0) {
 
+            // Query to insert data in database
+            $this->db->insert('watchlist', $data);
+            if ($this->db->affected_rows() > 0) {
+            return true;
+            }
+            } else {
+            return false;
+            }
+        }
         // Insert person data in database
         public function person_insert($data) {
 
