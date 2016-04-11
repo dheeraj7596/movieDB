@@ -38,10 +38,12 @@ class Movie_model extends CI_Model {
                         $query = $this->db->get('review_table');
                         return $query->result_array();
                 }
-                $this->db->select("*");
-                $this->db->from("review_table");
-                $this->db->where('reviewid',$reviewid);
-                $query = $this->db->get();
+                $sql = "SELECT R.reviewid, R.heading, R.body, U.username, R.movieid, R.rating FROM review_table AS R, test AS U WHERE R.reviewid=? AND U.id=R.userid";
+                // $this->db->select("*");
+                // $this->db->from("review_table");
+                // $this->db->where('reviewid',$reviewid);
+                // $query = $this->db->get();
+                $query=$this->db->query($sql,$reviewid);
                 return $query->result_array();
         }
         public function review_insert($data)
