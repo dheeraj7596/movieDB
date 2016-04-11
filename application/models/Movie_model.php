@@ -211,6 +211,24 @@ class Movie_model extends CI_Model {
             return false;
             }
         }
+        public function remove_from_watchlist($data)
+        {
+            $condition = "userid =" . "'" . $data['userid'] . "' AND " . "movieid =" . "'" . $data['movieid'] . "'";
+            $this->db->select('*');
+            $this->db->from('watchlist');
+            $this->db->where($condition);
+            $query = $this->db->get();
+            if ($query->num_rows() > 0) {
+
+            // Query to insert data in database
+            $this->db->delete('watchlist', $data);
+            if ($this->db->affected_rows() > 0) {
+            return true;
+            }
+            } else {
+            return false;
+            }
+        }
         // Insert person data in database
         public function person_insert($data) {
 

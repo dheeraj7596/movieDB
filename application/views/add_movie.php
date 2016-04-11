@@ -23,6 +23,38 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 40px;
+}
+</style>
 <body>
 
 <div id="container">
@@ -42,21 +74,21 @@
     <option value="Horror">Horror</option>
     <option value="Comedy">Comedy</option>
 </select> <br />                      
-
+<br/>
 <br/><?php echo form_label('Language :'); ?> <br />
 <select id="selectype" name="language" class="col-sm-2">
     <option value="English">English</option>
     <option value="Hindi">Hindi</option>
     <option value="Telugu">Telugu</option>
 </select> <br />
-
+</br>
 <br/><?php echo form_label('Country :'); ?> <br />
 <select id="selectype" name="country" class="col-sm-2">
     <option value="USA">USA</option>
     <option value="India">India</option>
     <option value="UK">UK</option>
 </select> <br />
-
+</br>
 <br/><?php echo form_label('Year :'); ?> <br />
 <?php echo form_input(array('id' => 'dyear', 'name' => 'dyear', 'required' => 'true', 'maxlength' => '4')); ?><br />
 
