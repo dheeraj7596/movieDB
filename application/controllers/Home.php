@@ -56,6 +56,21 @@ class Home extends CI_Controller {
                 // $this->load->view('all_users_page.html',$data);
             }
 
+            //delete a user
+            public function update_class($id)
+            {
+                $data['id']=$id;
+                $data['class']=2;
+                if($this->movie_model->update_user_class($data)==FALSE){
+                  $this->all_users();
+                }
+                else{
+                  $this->load->view('index');
+                }
+                // $data['genre'] = $genre;
+                // $this->load->view('all_users_page.html',$data);
+            }
+
             public function review_movie($movieid)
             {
                 $data['reviews'] = $this->movie_model->get_review_by_movie($movieid);
