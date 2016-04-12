@@ -77,13 +77,13 @@ $id = '1';
               <!-- <li><h3><span>F</span>ILMY</h3></li> -->
               </ul>
             </div>
-						<div class="btn-group pull-right">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									country
+						<div class="btn-group pull-right" disabled>
+							<div class="btn-group" hidden>
+								<button hidden type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									India
 									<span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu" >
+								<ul class="dropdown-menu" hidden>
 									<li><a >India</a></li>
 									<!-- <li><a href="#">UK</a></li> -->
 								</ul>
@@ -140,12 +140,21 @@ $id = '1';
 										<!-- <li><a href="login.html">Login</a></li> -->
                                     </ul>
                                 </li>
-								<!-- <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#">View<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
+                                        <!-- <li><a href="blog.html">Blog List</a></li> -->
+                                        <!-- Only users with admin access view a user -->
+                                        <?php if ($class < 2):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_users">Users</a></li>
+                                        <?php endif ?>
+                                        <?php if ($class < 3):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_persons">People</a></li>
+                                        <?php endif ?>
+                                        <?php if ($class < 2):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_users">Movies</a></li>
+                                        <?php endif ?>
                                     </ul>
-                                </li> -->
+                                </li>
 
                                   <!-- Only users with admin access can add a person -->
                 <?php if ($class < 3):?>
@@ -156,10 +165,7 @@ $id = '1';
 								        <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
                         <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li>
                 <?php endif ?>
-                <!-- Only users with admin access can add a person -->
-                <?php if ($class < 2):?>
-                          <li><a href="<?php echo base_url();?>index.php/home/all_users">Users</a></li>
-                <?php endif ?>
+
 
 								<!-- <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li> -->
 								<li><a href="<?php echo base_url().'index.php/home/your_review/'.$id;?>">My Reviews</a></li>

@@ -66,7 +66,7 @@ class Movie_model extends CI_Model {
         }
         public function get_movie_info_by_pid($pid)
         {
-            $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, person as P, work as W Where P.id = ? and P.id = W.personid and W.movieid = M.id";
+            $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name, M.video FROM movie as M, person as P, work as W Where P.id = ? and P.id = W.personid and W.movieid = M.id";
             $query=$this->db->query($sql, $pid);
             return $query->result_array();
         }
@@ -244,7 +244,7 @@ class Movie_model extends CI_Model {
         public function get_my_watchlist($id)
         {
             // $sql = "SELECT C.id, C.reviewid, U.username, C.body FROM comment AS C, test AS U WHERE C.reviewid=? AND U.id=C.userid";
-            $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, watchlist as W Where M.id=W.movieid and W.userid=?";
+            $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name, M.video FROM movie as M, watchlist as W Where M.id=W.movieid and W.userid=?";
             $query=$this->db->query($sql,$id);
             return $query->result_array();
         }
@@ -354,6 +354,21 @@ class Movie_model extends CI_Model {
           }
           $this->db->select("*");
           $this->db->from("test");
+          $this->db->where('id',$userid);
+          $query = $this->db->get();
+          // $query=$this->db->query($sql,$reviewid);
+          return $query->result_array();
+        }
+
+        //query to get all persons
+        public function get_persons($userid=FALSE){
+          if ($userid === FALSE)
+          {
+              $query = $this->db->get('person');
+              return $query->result_array();
+          }
+          $this->db->select("*");
+          $this->db->from("person");
           $this->db->where('id',$userid);
           $query = $this->db->get();
           // $query=$this->db->query($sql,$reviewid);

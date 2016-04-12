@@ -238,6 +238,14 @@ class Home extends CI_Controller {
             }
         }
 
+        // show all persons
+        public function all_persons()
+        {
+            $data['userDetails'] = $this->movie_model->get_persons();
+            // $data['genre'] = $genre;
+            $this->load->view('all_persons_page.html',$data);
+        }
+
         public function add_work(){
           $this->load->view('addwork.html');
         }
@@ -314,6 +322,7 @@ class Home extends CI_Controller {
                 'year' => $this->input->post('dyear'),
                 'story' => $this->input->post('dplot'),
                 'image_name' => $this->input->post('dimgname')
+                'video' => $this->input->post('dvideo')
                 );
                 if($this->movie_model->movie_insert($data))
                 {
