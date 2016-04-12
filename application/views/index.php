@@ -70,23 +70,21 @@ $id = '1';
 					<div class="col-sm-4">
 
 						<div class="logo pull-left">
-              <ul class="nav navbar-nav">
-                <div class='item'>
+             
             	<!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
               <li><a href="<?php echo base_url();?>index.php/home/index" class="active"><i class="fa fa-film fa-4x" ></i></a></li>
               <!-- <li><h3><span>F</span>ILMY</h3></li> -->
-              </ul>
-            </div>
+              </div>
+            
 						<div class="btn-group pull-right" disabled>
 							<div class="btn-group" hidden>
-								<button hidden type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+								<!-- <button hidden type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
 									India
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" hidden>
 									<li><a >India</a></li>
-									<!-- <li><a href="#">UK</a></li> -->
-								</ul>
+								</ul> -->
 							</div>
 
 							<!-- <div class="btn-group">

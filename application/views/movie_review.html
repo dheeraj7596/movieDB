@@ -4,6 +4,8 @@
 if (isset($this->session->userdata['logged_in'])) {
 $username = ($this->session->userdata['logged_in']['username']);
 $id = ($this->session->userdata['logged_in']['id']);
+$class = ($this->session->userdata['logged_in']['class']);
+
 // $email = ($this->session->userdata['logged_in']['email']);
 } else {
 $username = 'garbageName';
@@ -44,19 +46,19 @@ $id = '1';
           <div class="col-sm-6">
             <div class="contactinfo">
               <ul class="nav nav-pills">
-                <li><a href=""><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                <li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i> +91 7754915997</a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i> preetg@iitk.ac.in</a></li>
               </ul>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="social-icons pull-right">
               <ul class="nav navbar-nav">
-                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.facebook.com/preetansh.goyal"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/Preetanshgoyal"><i class="fa fa-twitter"></i></a></li>
+                <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
               </ul>
             </div>
           </div>
@@ -68,33 +70,35 @@ $id = '1';
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <div class="logo pull-left">
-              <!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
-              <a href="<?php echo base_url();?>index.php/home/index" class="active"><i class="fa fa-film fa-4x" ></i></a>
 
-            </div>
-            <div class="btn-group pull-right">
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                  USA
+            <div class="logo pull-left">
+             
+              <!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
+              <li><a href="<?php echo base_url();?>index.php/home/index" class="active"><i class="fa fa-film fa-4x" ></i></a></li>
+              <!-- <li><h3><span>F</span>ILMY</h3></li> -->
+              </div>
+            
+            <div class="btn-group pull-right" disabled>
+              <div class="btn-group" hidden>
+                <!-- <button hidden type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                  India
                   <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu">
-                  <li><a href="">Canada</a></li>
-                  <li><a href="">UK</a></li>
-                </ul>
+                <ul class="dropdown-menu" hidden>
+                  <li><a >India</a></li>
+                </ul> -->
               </div>
 
-              <div class="btn-group">
+              <!-- <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                   DOLLAR
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="">Canadian Dollar</a></li>
-                  <li><a href="">Pound</a></li>
+                  <li><a href="#">Canadian Dollar</a></li>
+                  <li><a href="#">Pound</a></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="col-sm-8">
@@ -104,7 +108,7 @@ $id = '1';
                 <!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                 <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
-                <li><a href="<?php echo base_url();?>index.php/home/logout"><i class="fa fa-lock"></i> <?php echo "Logout" ?></a></li>
+                <li><i class="fa fa-lock"> <a href="<?php echo base_url();?>index.php/home/logout"><?php echo "Logout" ?></a></i></li>
               </ul>
             </div>
           </div>
@@ -126,22 +130,55 @@ $id = '1';
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
-                <li><a href="<?php echo base_url();?>index.php/home/index">Home</a></li>
+                <li><a href="<?php echo base_url();?>index.php/home/index" class="active">Home</a></li>
                 <li class="dropdown"><a href="#">Genre<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="<?php echo base_url();?>index.php/home/genre/Romance">Romance</a></li>
                     <li><a href="<?php echo base_url();?>index.php/home/genre/Thriller">Thriller</a></li>
                     <li><a href="<?php echo base_url();?>index.php/home/genre/Drama">Drama</a></li>
                     <li><a href="<?php echo base_url();?>index.php/home/genre/Horror">Horror</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <!-- <li><a href="login.html">Login</a></li> -->
                                     </ul>
                                 </li>
+                <li class="dropdown"><a href="#">View<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <!-- <li><a href="blog.html">Blog List</a></li> -->
+                                        <!-- Only users with admin access view a user -->
+                                        <?php if ($class < 2):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_users">Users</a></li>
+                                        <?php endif ?>
+                                        <?php if ($class < 10):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_persons">People</a></li>
+                                        <?php endif ?>
+                                        <?php if ($class < 10):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_movie">Movies</a></li>
+                                        <?php endif ?>
+                                    </ul>
+                                </li>
+
+                                  <!-- Only users with admin access can add a person -->
+                <?php if ($class < 3):?>
+                          <li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
+                <?php endif ?>
+                <!-- Only users with other access can change movies etc. -->
+                <?php if ($class < 3):?>
+                        <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li>
+                <?php endif ?>
+
+
+                <!-- <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li> -->
                 <li><a href="<?php echo base_url().'index.php/home/your_review/'.$id;?>">My Reviews</a></li>
                 <li><a href="<?php echo base_url().'index.php/home/your_watchlist/'.$id;?>">My Watchlist</a></li>
+                <!-- <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li> -->
+                <!-- <li><a href="<?php echo base_url();?>index.php/home/your_review">Your Reviews</a></li> -->
               </ul>
             </div>
           </div>
           <div class="col-sm-3">
+            <!-- <div class="search_box pull-right">
+              <input type="text" placeholder="Search Movie"/>
+            </div> -->
             <form class="navbar-form" role="search" method="post"
                             action="<?php echo base_url().'index.php/home/movie_info_name';?>" >
                                 <div class="input-group add-on">
@@ -182,7 +219,7 @@ $id = '1';
               <tr>
                 <!--<li class="span3">-->
                 <td class="userid">
-                  <?php echo $review_item['userid'];?>
+                  <a href="<?php echo base_url().'index.php/home/show_allreview/'.$review_item['userid'];?>" class="btn" type="button"><?php echo $review_item['userid'];?></a>
                 </td>
                 <td class="review_heading">
                   <?php echo $review_item['heading'];?>
