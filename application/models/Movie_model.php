@@ -31,6 +31,19 @@ class Movie_model extends CI_Model {
                 $query = $this->db->get();
                 return $query->result_array();
         }
+        public function get_allreview_of_id($id = FALSE)
+        {
+                if ($id === FALSE)
+                {
+                        $query = $this->db->get('review_table');
+                        return $query->result_array();
+                }
+                $this->db->select("*");
+                $this->db->from("review_table");
+                $this->db->where('userid',$id);
+                $query = $this->db->get();
+                return $query->result_array();
+        }
         public function get_full_review($reviewid = FALSE)
         {
                 if ($reviewid === FALSE)

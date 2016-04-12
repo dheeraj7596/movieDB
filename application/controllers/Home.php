@@ -62,6 +62,11 @@ class Home extends CI_Controller {
                 $this->load->view('movie_review.html',$data);
                 // $this->load->view('blog-single.html',$data);
             }
+            public function show_allreview($id)
+            {
+                $data['reviews'] = $this->movie_model->get_allreview_of_id($id);
+                $this->load->view('movie_review.html',$data);
+            }
 
             // public function read_review($reviewid)
             // {
@@ -437,4 +442,5 @@ class Home extends CI_Controller {
             $data['movieDetails'] = $this->movie_model->get_my_watchlist($id);
             $this->load->view('movie_genre_page.html',$data);
         }
+
 }

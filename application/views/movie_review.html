@@ -219,7 +219,7 @@ $id = '1';
               <tr>
                 <!--<li class="span3">-->
                 <td class="userid">
-                  <?php echo $review_item['userid'];?>
+                  <a href="<?php echo base_url().'index.php/home/show_allreview/'.$review_item['userid'];?>" class="btn" type="button"><?php echo $review_item['userid'];?></a>
                 </td>
                 <td class="review_heading">
                   <?php echo $review_item['heading'];?>
