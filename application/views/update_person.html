@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Person | FILMY</title>
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/price-range.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/animate.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/css/main.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/css/responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/images/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+<body>
+
+  <?php
+  if (isset($message_display)) {
+  echo "<div class='message'>";
+  echo $message_display;
+  echo "</div>";
+  }
+  ?>
+
+  <section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+				<!-- </div>
+				<div class="col-sm-1">
+					<h2 class="or">OR</h2>
+				</div>
+				<div class="col-sm-4"> -->
+					<div class="signup-form"><!--sign up form-->
+						<h2>New Person!</h2>
+						<form method="post" action="<?php echo base_url().'index.php/home/new_person';?>">
+							<input type="text" placeholder="Name" name="name"/>
+							<input type="number" placeholder="Age" name="age"/>
+							<input type="text" placeholder="Picture" name="picture"/>
+              <input type="text" placeholder="Country" name="country"/>
+              <input type="text" placeholder="Story" name="story"></textarea>
+							<button type="submit" class="btn btn-default">Add</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section>

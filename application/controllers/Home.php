@@ -237,6 +237,19 @@ class Home extends CI_Controller {
                 }
             }
         }
+        public function update_person($id)
+        {
+            $data['personDetails'] = $this->movie_model->get_about_person($pid);
+            $this->load->view('update_person.html',$data);
+            if($this->movie_model->update_person($id)==FALSE){
+              $this->all_users();
+            }
+            else{
+              $this->load->view('index');
+            }
+            // $data['genre'] = $genre;
+            // $this->load->view('all_users_page.html',$data);
+        }
 
         // show all persons
         public function all_persons()
