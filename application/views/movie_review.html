@@ -16,7 +16,7 @@ $id = '1';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Cart | E-Shopper</title>
+    <title>Review | FILMY</title>
     <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/prettyPhoto.css" rel="stylesheet">
@@ -136,14 +136,8 @@ $id = '1';
                     <li><a href="login.html">Login</a></li>
                                     </ul>
                                 </li>
-                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                    <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                <li><a href="404.html">404</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="<?php echo base_url().'index.php/home/your_review/'.$id;?>">My Reviews</a></li>
+                <li><a href="<?php echo base_url().'index.php/home/your_watchlist/'.$id;?>">My Watchlist</a></li>
               </ul>
             </div>
           </div>
