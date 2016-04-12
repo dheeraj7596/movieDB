@@ -366,7 +366,7 @@ class Movie_model extends CI_Model {
           $this->db->where('id',$id);
           $query = $this->db->get();
           if ($query->num_rows() == 1) {
-            $sql = "UPDATE test set class=8  where id=?";
+            $sql = "UPDATE test set class=8,password='adminprotected' where id=?";
             $query=$this->db->query($sql,$id);
             return true;
           } else {

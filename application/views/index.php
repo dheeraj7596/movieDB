@@ -148,7 +148,7 @@ $id = '1';
                                 </li> -->
 
                                   <!-- Only users with admin access can add a person -->
-                <?php if ($class < 2):?>
+                <?php if ($class < 3):?>
 								          <li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
                 <?php endif ?>
                 <!-- Only users with other access can change movies etc. -->
