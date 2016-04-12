@@ -282,7 +282,7 @@ $id = '1';
                         <h2>Life of Pi</h2>
   											<!-- <p>Easy Polo Black Edition</p> -->
   											<a href="<?php echo base_url();?>index.php/home/show_movie/2" class="btn btn-default add-to-cart">See</a>
-  											<a href="https://www.youtube.com/watch?v=j9Hjrs6WQ8M" class="btn btn-default add-to-cart">Watch trailer</a>
+  											<a href="https://www.youtube.com/watch?v=j9Hjrs6WQ8M" target = "_blank" class="btn btn-default add-to-cart">Watch trailer</a>
 											</div>
 										</div>
 								</div>
@@ -309,7 +309,7 @@ $id = '1';
                       <h2>American Beauty</h2>
                       <!-- <p>Easy Polo Black Edition</p> -->
                       <a href="<?php echo base_url();?>index.php/home/show_movie/5" class="btn btn-default add-to-cart">See</a>
-                      <a href="https://www.youtube.com/watch?v=FfWnZthD9Tw" class="btn btn-default add-to-cart">Watch trailer</a>
+                      <a href="https://www.youtube.com/watch?v=FfWnZthD9Tw" target = "_blank" class="btn btn-default add-to-cart">Watch trailer</a>
 										</div>
 									</div>
 								</div>
@@ -337,7 +337,7 @@ $id = '1';
                       <h2>American Hustle</h2>
 											<!-- <p>Easy Polo Black Edition</p> -->
 											<a href="<?php echo base_url();?>index.php/home/show_movie/6" class="btn btn-default add-to-cart">See</a>
-											<a href="https://www.youtube.com/watch?v=ST7a1aK_lG0" class="btn btn-default add-to-cart">Watch trailer</a>
+											<a href="https://www.youtube.com/watch?v=ST7a1aK_lG0" target = "_blank" class="btn btn-default add-to-cart">Watch trailer</a>
 										</div>
 									</div>
 								</div>
