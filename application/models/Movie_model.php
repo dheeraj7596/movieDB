@@ -402,6 +402,19 @@ class Movie_model extends CI_Model {
           }
         }
 
+        public function update_user_class($data){
+          $this->db->select("*");
+          $this->db->from("test");
+          $this->db->where('id',$data['id']);
+          $query = $this->db->get();
+          if ($query->num_rows() == 1) {
+            $sql = "UPDATE test set class=? where id=?";
+            $query=$this->db->query($sql,array($data['class'],$data['id']));
+            return true;
+          } else {
+          return false;
+          }
+        }
         public function update_person($id){
           $this->db->select("*");
           $this->db->from("person");
