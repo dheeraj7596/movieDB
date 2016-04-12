@@ -177,27 +177,34 @@ $id = '1';
         <table class="table table-condensed">
           <thead>
             <tr class="movie_details">
-              <td class="movie_name">Movie</td>
-              <td class="movie_year">year</td>
-              <td class="movie_genre">Genre</td>
-              <td class="movie_reviews">Review</td>
+              <td class="movie_id">Id</td>
+              <td class="movie_name">Name</td>
+              <td class="movie_age">Age</td>
+              <td class="movie_country">Country</td>
+              <td class="movie_class">Class</td>
               <td></td>
             </tr>
           </thead>
           <tbody>
-              <?php foreach ($movieDetails as $movie_item): ?>
+              <?php foreach ($userDetails as $user_item): ?>
                 <tr>
                 <!--<li class="span3">-->
+                    <td class="movie_id">
+                        <?php echo $user_item['id'];?>
+                    </td>
                     <td class="movie_name">
-                        <a href="<?php echo base_url().'index.php/home/show_movie/'.$movie_item['id'];?>" class="btn" type="button"><?php echo $movie_item['title'];?></a>
+                        <?php echo $user_item['username'];?>
                     </td>
-                    <td class="movie_year">
-                        <?php echo $movie_item['year'];?>
+                    <td class="movie_age">
+                        <?php echo $user_item['age'];?>
                     </td>
-                    <td class="movie_genre">
-                        <?php echo $movie_item['genre1'];?>
+                    <td class="movie_age">
+                        <?php echo $user_item['country'];?>
                     </td>
-                    <td class="movie_reviews">
+                    <td class="movie_age">
+                        <?php echo $user_item['class'];?>
+                    </td>
+                    <!-- <td class="movie_reviews">
                         <a href="<?php echo base_url().'index.php/home/review_movie/'.$movie_item['id'];?>" class="btn" type="button">Review</a>
                     </td>
                     <td class="write_review">
@@ -207,7 +214,7 @@ $id = '1';
                         <td class="movie_image">
                         <a href="<?php echo base_url().'index.php/home/show_movie/'.$movie_item['id'];?>"><img src="<?php echo base_url().'assets/images/cart/'.$movie_item['image_name'];?>" alt=""></a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tr>
               <?php endforeach; ?>
               <!-- <td class="cart_product">
