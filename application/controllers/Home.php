@@ -289,6 +289,7 @@ class Home extends CI_Controller {
                 'language' => $this->input->post('language'),
                 'country' => $this->input->post('country'),
                 'year' => $this->input->post('dyear'),
+                'story' => $this->input->post('dplot'),
                 'image_name' => $this->input->post('dimgname')
                 );
                 if($this->movie_model->movie_insert($data))
@@ -378,8 +379,16 @@ class Home extends CI_Controller {
                 $data['flag'] = 0;
             }
             $data['movieDetails'] = $this->movie_model->get_movie_info_by_id($movieid);
+            $data['cast'] = $this->movie_model->get_cast_by_id($movieid);
+            $data['director'] = $this->movie_model->get_director_id($movieid);
 
-            $this->load->view('product-details.html',$data);
+            $this->load->view('movie_details.html',$data);
+        }
+        public function show_person($pid)
+        {
+            $data['personDetails'] = $this->movie_model->get_about_person($pid);
+            $data['movieDetails'] = $this->movie_model->get_movie_info_by_pid($pid);
+            $this->load->view('person_details.html',$data);
         }
         public function your_watchlist($id)
         {
