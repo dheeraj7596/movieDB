@@ -16,13 +16,7 @@ $id = '1';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-<!-- <<<<<<< HEAD -->
-    <?php foreach ($movieDetails as $movie_item): ?>
-    <title> <?php echo $movie_item['genre1'];?> | FILMY</title>
-    <?php endforeach; ?>
-<!-- =======
     <title>F-ILMY</title>
->>>>>>> 619f99115d8c7d9087c0b5c04b0b533a8713ac7e -->
     <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/prettyPhoto.css" rel="stylesheet">
@@ -141,8 +135,14 @@ $id = '1';
                     <li><a href="login.html">Login</a></li>
                                     </ul>
                                 </li>
-                <li><a href="<?php echo base_url().'index.php/home/your_review/'.$id;?>">My Reviews</a></li>
-                <li><a href="<?php echo base_url().'index.php/home/your_watchlist/'.$id;?>">My Watchlist</a></li>
+                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="blog.html">Blog List</a></li>
+                    <li><a href="blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li>
+                <li><a href="404.html">404</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -177,39 +177,47 @@ $id = '1';
         <table class="table table-condensed">
           <thead>
             <tr class="movie_details">
-              <td class="movie_name">Movie</td>
-              <td class="movie_year">year</td>
-              <td class="movie_genre">Genre</td>
-              <td class="movie_reviews">Review</td>
+              <td class="movie_id">Id</td>
+              <td class="movie_name">Name</td>
+              <td class="movie_age">Age</td>
+              <td class="movie_country">Country</td>
+              <td class="movie_class">Class</td>
               <td></td>
             </tr>
           </thead>
           <tbody>
-              <?php foreach ($movieDetails as $movie_item): ?>
+              <?php foreach ($userDetails as $user_item):
+                      if ($user_item['class']!=8): ?>
                 <tr>
                 <!--<li class="span3">-->
+                    <td class="movie_id">
+                        <?php echo $user_item['id'];?>
+                    </td>
                     <td class="movie_name">
-                        <a href="<?php echo base_url().'index.php/home/show_movie/'.$movie_item['id'];?>" class="btn" type="button"><?php echo $movie_item['title'];?></a>
+                        <?php echo $user_item['username'];?>
                     </td>
-                    <td class="movie_year">
-                        <?php echo $movie_item['year'];?>
+                    <td class="movie_age">
+                        <?php echo $user_item['age'];?>
                     </td>
-                    <td class="movie_genre">
-                        <?php echo $movie_item['genre1'];?>
+                    <td class="movie_age">
+                        <?php echo $user_item['country'];?>
+                    </td>
+                    <td class="movie_age">
+                        <?php echo $user_item['class'];?>
                     </td>
                     <td class="movie_reviews">
-                        <a href="<?php echo base_url().'index.php/home/review_movie/'.$movie_item['id'];?>" class="btn" type="button">Review</a>
+                        <a href="<?php echo base_url().'index.php/home/delete_user/'.$user_item['id'];?>" class="btn" type="button">Delete</a>
                     </td>
-                    <td class="write_review">
+                    <!-- <td class="write_review">
                         <a href="<?php echo base_url().'index.php/home/new_review_page/'.$movie_item['id'];?>" class="btn" type="button">write new</a>
-                    </td>
-                    <tr>
+                    </td> -->
+                    <!-- <tr>
                         <td class="movie_image">
                         <a href="<?php echo base_url().'index.php/home/show_movie/'.$movie_item['id'];?>"><img src="<?php echo base_url().'assets/images/cart/'.$movie_item['image_name'];?>" alt=""></a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tr>
-              <?php endforeach; ?>
+              <?php endif; endforeach; ?>
               <!-- <td class="cart_product">
 <<<<<<< HEAD
                 <a href=""><img src="<?php echo base_url();?>assets/images/cart/one.png" alt=""></a>

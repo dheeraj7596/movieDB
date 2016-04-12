@@ -147,14 +147,18 @@ $id = '1';
                                     </ul>
                                 </li> -->
 
-                                <!-- Only users with admin access can add a person -->
-                <?php if ($class < 2):?>
+                                  <!-- Only users with admin access can add a person -->
+                <?php if ($class < 3):?>
 								          <li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
                 <?php endif ?>
                 <!-- Only users with other access can change movies etc. -->
                 <?php if ($class < 3):?>
 								        <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
                         <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li>
+                <?php endif ?>
+                <!-- Only users with admin access can add a person -->
+                <?php if ($class < 2):?>
+                          <li><a href="<?php echo base_url();?>index.php/home/all_users">Users</a></li>
                 <?php endif ?>
 
 								<!-- <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li> -->

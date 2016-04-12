@@ -246,19 +246,19 @@ class Movie_model extends CI_Model {
             // $sql = "SELECT C.id, C.reviewid, U.username, C.body FROM comment AS C, test AS U WHERE C.reviewid=? AND U.id=C.userid";
             $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, watchlist as W Where M.id=W.movieid and W.userid=?";
             $query=$this->db->query($sql,$id);
-            return $query->result_array();          
+            return $query->result_array();
         }
         public function get_cast_by_id($movieid)
         {
             $sql = "SELECT person.id, person.name , T.plays from person, work as T  where T.movieid=? and T.role='actor' and person.id = T.personid";
             $query=$this->db->query($sql,$movieid);
-            return $query->result_array(); 
+            return $query->result_array();
         }
         public function get_director_id($movieid)
         {
             $sql = "SELECT person.id, person.name from person, work as T  where T.movieid=? and T.role='director' and person.id = T.personid";
             $query=$this->db->query($sql,$movieid);
-            return $query->result_array(); 
+            return $query->result_array();
         }
         public function get_about_person($pid)
         {
@@ -344,6 +344,37 @@ class Movie_model extends CI_Model {
           // return $result;
         }
         }
+
+        //query to get all users
+        public function get_users($userid=FALSE){
+          if ($userid === FALSE)
+          {
+              $query = $this->db->get('test');
+              return $query->result_array();
+          }
+          $this->db->select("*");
+          $this->db->from("test");
+          $this->db->where('id',$userid);
+          $query = $this->db->get();
+          // $query=$this->db->query($sql,$reviewid);
+          return $query->result_array();
+        }
+
+        public function delete_user($id){
+          $this->db->select("*");
+          $this->db->from("test");
+          $this->db->where('id',$id);
+          $query = $this->db->get();
+          if ($query->num_rows() == 1) {
+            $sql = "UPDATE test set class=8,password='adminprotected' where id=?";
+            $query=$this->db->query($sql,$id);
+            return true;
+          } else {
+          return false;
+          }
+        }
+
+
         // Read data using username and password
         public function login($data) {
 
