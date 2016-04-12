@@ -174,11 +174,11 @@ $id = '1';
 							<div class="view-product">
 							
 								<img src="<?php echo base_url().'assets/images/cart/'.$movie_item['image_name'];?>" alt="">
-								<h3>ZOOM</h3>
+								<!-- <h3>ZOOM</h3> -->
 							</div>
-							<div id="similar-product" class="carousel slide" data-ride="carousel">
+							<!-- <div id="similar-product" class="carousel slide" data-ride="carousel">
 
-								  <!-- Wrapper for slides -->
+								  
 								    <div class="carousel-inner">
 										<div class="item active">
 										  <a href=""><img src="<?php echo base_url();?>assets/images/product-details/similar1.jpg" alt=""></a>
@@ -198,14 +198,13 @@ $id = '1';
 
 									</div>
 
-								  <!-- Controls -->
 								  <a class="left item-control" href="#similar-product" data-slide="prev">
 									<i class="fa fa-angle-left"></i>
 								  </a>
 								  <a class="right item-control" href="#similar-product" data-slide="next">
 									<i class="fa fa-angle-right"></i>
 								  </a>
-							</div>
+							</div> -->
 
 						</div>
 						<div class="col-sm-7">
@@ -225,12 +224,14 @@ $id = '1';
 
 										<form method="post" action="<?php echo base_url().'index.php/home/add_watchlist';?>">
 													<!-- <input type="hidden" name="userid" value="<?php echo $id;?>" /> -->
+													<a href="<?php echo $movie_item['trailer'];?>" class="btn btn-default add-to-cart">Watch trailer</a>
 								                      <input type="hidden" name="movieid" value="<?php echo $movie_item['id'];?>"/>
 										<button type="submit" class="btn btn-fefault cart">
 											<i class="fa fa-shopping-cart"></i>
 											Add to watchlist
 										</button>
 									</form>
+
 									<?php  else: ?>
 											<div class="productinfo text-center">
 												<!-- <img src="<?php echo base_url();?>assets/images/home/gallery1.jpg" alt="" />
@@ -238,6 +239,8 @@ $id = '1';
 												<p>Easy Polo Black Edition</p> -->
 												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Added to watchlist </button>
 												<form method="post" action="<?php echo base_url().'index.php/home/remove_watchlist';?>">
+
+													<a href="<?php echo $movie_item['trailer'];?>" target = "blank" class="btn btn-default add-to-cart">Watch trailer</a>
 													<!-- <input type="hidden" name="userid" value="<?php echo $id;?>" /> -->
 								                      <input type="hidden" name="movieid" value="<?php echo $movie_item['id'];?>"/>
 										<button type="submit" class="btn btn-fefault cart">
@@ -247,6 +250,7 @@ $id = '1';
 									</form>
 											</div>
 								<?php endif; ?>
+
 									</span>
 									<!-- <p><b>Availability:</b> In Stock</p>
 									<p><b>Condition:</b> New</p>
@@ -261,7 +265,7 @@ $id = '1';
 
 									<p> <a href="<?php echo base_url().'index.php/home/show_person/'.$cast_item['id'];?>" class="btn" type="button"><?php echo $cast_item['name'];?></a> as <?php echo $cast_item['plays'];?></p>
 									<?php endforeach; ?>
-									<a href=""><img src="<?php echo base_url();?>assets/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+									<!-- <a href=""><img src="<?php echo base_url();?>assets/images/product-details/share.png" class="share img-responsive"  alt="" /></a> -->
 									
 							</div><!--/product-information-->
 						</div>
