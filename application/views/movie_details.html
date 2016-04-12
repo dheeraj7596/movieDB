@@ -210,8 +210,11 @@ $id = '1';
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<!-- <img src="<?php echo base_url();?>assets/images/product-details/new.jpg" class="newarrival" alt="" /> -->
-									<h2><?php echo $movie_item['title'];?></h2>
-									<!-- <p>Web ID: 1089772</p> -->
+									<h1><?php echo $movie_item['title'];?></h1>
+									<?php foreach ($rating as $rating_item): ?>
+										<h2><?php echo $rating_item;?>/10</h2>
+									<?php endforeach; ?>
+									<!-- <rating>Web ID: 1089772</p> -->
 									<!-- <img src="<?php echo base_url();?>assets/images/product-details/rating.png" alt="" /> -->
 									<span>
 										<!-- <span>US $59</span> -->
@@ -247,8 +250,18 @@ $id = '1';
 									<!-- <p><b>Availability:</b> In Stock</p>
 									<p><b>Condition:</b> New</p>
 									<p><b>Brand:</b> E-SHOPPER</p> -->
+									<h4> Director: </h4>
+									<?php foreach ($director as $director_item): ?>
+									<!-- <p> <?php echo $director_item['name'];?></p> -->
+									<p> <a href="<?php echo base_url().'index.php/home/show_person/'.$director_item['id'];?>" class="btn" type="button"><?php echo $director_item['name'];?></a> </p>
+									<?php endforeach; ?>
+									<h4> Cast: </h4>
+									<?php foreach ($cast as $cast_item): ?>
+
+									<p> <a href="<?php echo base_url().'index.php/home/show_person/'.$cast_item['id'];?>" class="btn" type="button"><?php echo $cast_item['name'];?></a> as <?php echo $cast_item['plays'];?></p>
+									<?php endforeach; ?>
 									<a href=""><img src="<?php echo base_url();?>assets/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
-								
+									
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->

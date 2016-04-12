@@ -64,6 +64,18 @@ class Movie_model extends CI_Model {
             $query = $this->db->get();
             return $query->result_array();
         }
+        public function get_movie_info_by_pid($pid)
+        {
+            $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, person as P, work as W Where P.id = ? and P.id = W.personid and W.movieid = M.id";
+            $query=$this->db->query($sql, $pid);
+            return $query->result_array();
+        }
+        public function get_avg_rating ($movieid)
+        {
+            $sql = "SELECT avg(rating) as aver FROM review_table Where movieid = ?";
+            $query=$this->db->query($sql, $movieid);
+            return $query->result_array();
+        }
         public function get_movie_info_by_id($name = FALSE)
         {
             if ($name === FALSE)
@@ -235,6 +247,26 @@ class Movie_model extends CI_Model {
             $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, watchlist as W Where M.id=W.movieid and W.userid=?";
             $query=$this->db->query($sql,$id);
             return $query->result_array();          
+        }
+        public function get_cast_by_id($movieid)
+        {
+            $sql = "SELECT person.id, person.name , T.plays from person, work as T  where T.movieid=? and T.role='actor' and person.id = T.personid";
+            $query=$this->db->query($sql,$movieid);
+            return $query->result_array(); 
+        }
+        public function get_director_id($movieid)
+        {
+            $sql = "SELECT person.id, person.name from person, work as T  where T.movieid=? and T.role='director' and person.id = T.personid";
+            $query=$this->db->query($sql,$movieid);
+            return $query->result_array(); 
+        }
+        public function get_about_person($pid)
+        {
+            $this->db->select("*");
+            $this->db->from("person");
+            $this->db->where('id',$pid);
+            $query = $this->db->get();
+            return $query->result_array();
         }
         // Insert person data in database
         public function person_insert($data) {
