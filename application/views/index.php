@@ -147,11 +147,11 @@ $id = '1';
                                         <?php if ($class < 2):?>
                                                   <li><a href="<?php echo base_url();?>index.php/home/all_users">Users</a></li>
                                         <?php endif ?>
-                                        <?php if ($class < 3):?>
+                                        <?php if ($class < 10):?>
                                                   <li><a href="<?php echo base_url();?>index.php/home/all_persons">People</a></li>
                                         <?php endif ?>
-                                        <?php if ($class < 2):?>
-                                                  <li><a href="<?php echo base_url();?>index.php/home/all_users">Movies</a></li>
+                                        <?php if ($class < 10):?>
+                                                  <li><a href="<?php echo base_url();?>index.php/home/all_movie">Movies</a></li>
                                         <?php endif ?>
                                     </ul>
                                 </li>

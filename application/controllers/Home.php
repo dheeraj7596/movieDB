@@ -298,8 +298,15 @@ class Home extends CI_Controller {
 
         public function movie_info_name()
         {
+
             $data['movieDetails'] = $this->movie_model->get_movie_info($_POST["search-term"]);
             $this->load->view('movie_genre_page.html',$data);
+        }
+
+        public function all_movie()
+        {
+          $data['movieDetails'] = $this->movie_model->get_movie_info();
+          $this->load->view('movie_genre_page.html',$data);
         }
         public function new_movie()
         {
@@ -321,7 +328,7 @@ class Home extends CI_Controller {
                 'country' => $this->input->post('country'),
                 'year' => $this->input->post('dyear'),
                 'story' => $this->input->post('dplot'),
-                'image_name' => $this->input->post('dimgname')
+                'image_name' => $this->input->post('dimgname'),
                 'video' => $this->input->post('dvideo')
                 );
                 if($this->movie_model->movie_insert($data))
