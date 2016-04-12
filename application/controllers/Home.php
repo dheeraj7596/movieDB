@@ -195,14 +195,16 @@ class Home extends CI_Controller {
             $this->form_validation->set_rules('country', 'Country', 'trim|required');
             $this->form_validation->set_rules('age', 'Age', 'trim|required');
             $this->form_validation->set_rules('picture', 'Picture', 'trim|required');
+            $this->form_validation->set_rules('story', 'Story', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('addperson.html');
             } else {
                 $data = array(
                 'name' => $this->input->post('name'),
-                'picture' => $this->input->post('picture'),
+                'image_name' => $this->input->post('picture'),
                 'age' => $this->input->post('age'),
-                'country' => $this->input->post('country')
+                'country' => $this->input->post('country'),
+                'story' => $this->input->post('story')
                 );
                 $result = $this->movie_model->person_insert($data);
                 if ($result == TRUE) {

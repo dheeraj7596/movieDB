@@ -1,11 +1,9 @@
 
 Errors:
-- detailed review shows auther as current user
-- completion of pages wit headers, home buttons 
+- completion of pages wit headers, home buttons
 - Sometime write_review gives php error sometimes
-
+- add work with already existing entry 
 
 Future:
 - Compulsary fields in signup
 - delete user for admin
-
