@@ -58,6 +58,7 @@ div {
 <body>
 
 <div id="container">
+    <a href="<?php echo base_url().'index.php/home/';?>"><button class="btn" type="button"><- Back to Home</button></a>
 <?php echo form_open('Home/add_new_movie'); ?>
 <h1>Add Movie Mr.admin...</h1><hr/>
 <?php if (isset($message)) { ?>
@@ -99,11 +100,13 @@ div {
 <br/><?php echo form_label('Image name :'); ?> <br />
 <?php echo form_input(array('id' => 'dimgname', 'name' => 'dimgname', 'required' => 'true', 'maxlength' => '50')); ?><br />
 
-<br/><?php echo form_label('Youtube link :'); ?> <br />
+<br/><?php echo form_label('Trailer link :'); ?> <br />
 <?php echo form_input(array('id' => 'dvideo', 'name' => 'dvideo', 'required' => 'true', 'maxlength' => '100')); ?><br />
 
 <br/><?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
 <?php echo form_close(); ?><br/>
+
+
 <div id="fugo">
 
 </div>

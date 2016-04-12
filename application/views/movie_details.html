@@ -224,7 +224,7 @@ $id = '1';
 
 										<form method="post" action="<?php echo base_url().'index.php/home/add_watchlist';?>">
 													<!-- <input type="hidden" name="userid" value="<?php echo $id;?>" /> -->
-													<a href="<?php echo $movie_item['trailer'];?>" class="btn btn-default add-to-cart">Watch trailer</a>
+													<a href="<?php echo $movie_item['video'];?>" target = "_blank"class="btn btn-default add-to-cart">Watch trailer</a>
 								                      <input type="hidden" name="movieid" value="<?php echo $movie_item['id'];?>"/>
 										<button type="submit" class="btn btn-fefault cart">
 											<i class="fa fa-shopping-cart"></i>
@@ -240,7 +240,7 @@ $id = '1';
 												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Added to watchlist </button>
 												<form method="post" action="<?php echo base_url().'index.php/home/remove_watchlist';?>">
 
-													<a href="<?php echo $movie_item['trailer'];?>" target = "blank" class="btn btn-default add-to-cart">Watch trailer</a>
+													<a href="<?php echo $movie_item['video'];?>" target = "_blank" class="btn btn-default add-to-cart">Watch trailer</a>
 													<!-- <input type="hidden" name="userid" value="<?php echo $id;?>" /> -->
 								                      <input type="hidden" name="movieid" value="<?php echo $movie_item['id'];?>"/>
 										<button type="submit" class="btn btn-fefault cart">
