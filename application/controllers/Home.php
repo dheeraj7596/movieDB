@@ -322,6 +322,7 @@ class Home extends CI_Controller {
                 'year' => $this->input->post('dyear'),
                 'story' => $this->input->post('dplot'),
                 'image_name' => $this->input->post('dimgname')
+                'video' => $this->input->post('dvideo')
                 );
                 if($this->movie_model->movie_insert($data))
                 {

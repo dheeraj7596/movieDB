@@ -73,7 +73,7 @@ div {
     <option value="Drama">Drama</option>
     <option value="Horror">Horror</option>
     <option value="Comedy">Comedy</option>
-</select> <br />                      
+</select> <br />
 <br/>
 <br/><?php echo form_label('Language :'); ?> <br />
 <select id="selectype" name="language" class="col-sm-2">
@@ -99,6 +99,9 @@ div {
 <br/><?php echo form_label('Image name :'); ?> <br />
 <?php echo form_input(array('id' => 'dimgname', 'name' => 'dimgname', 'required' => 'true', 'maxlength' => '50')); ?><br />
 
+<br/><?php echo form_label('Youtube link :'); ?> <br />
+<?php echo form_input(array('id' => 'dvideo', 'name' => 'dvideo', 'required' => 'true', 'maxlength' => '100')); ?><br />
+
 <br/><?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
 <?php echo form_close(); ?><br/>
 <div id="fugo">
@@ -107,4 +110,3 @@ div {
 </div>
 </body>
 </html>
-
