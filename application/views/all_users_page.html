@@ -186,7 +186,8 @@ $id = '1';
             </tr>
           </thead>
           <tbody>
-              <?php foreach ($userDetails as $user_item): ?>
+              <?php foreach ($userDetails as $user_item):
+                      if ($user_item['class']!=8): ?>
                 <tr>
                 <!--<li class="span3">-->
                     <td class="movie_id">
@@ -204,19 +205,19 @@ $id = '1';
                     <td class="movie_age">
                         <?php echo $user_item['class'];?>
                     </td>
-                    <!-- <td class="movie_reviews">
-                        <a href="<?php echo base_url().'index.php/home/review_movie/'.$movie_item['id'];?>" class="btn" type="button">Review</a>
+                    <td class="movie_reviews">
+                        <a href="<?php echo base_url().'index.php/home/delete_user/'.$user_item['id'];?>" class="btn" type="button">Delete</a>
                     </td>
-                    <td class="write_review">
+                    <!-- <td class="write_review">
                         <a href="<?php echo base_url().'index.php/home/new_review_page/'.$movie_item['id'];?>" class="btn" type="button">write new</a>
-                    </td>
-                    <tr>
+                    </td> -->
+                    <!-- <tr>
                         <td class="movie_image">
                         <a href="<?php echo base_url().'index.php/home/show_movie/'.$movie_item['id'];?>"><img src="<?php echo base_url().'assets/images/cart/'.$movie_item['image_name'];?>" alt=""></a>
                         </td>
                     </tr> -->
                 </tr>
-              <?php endforeach; ?>
+              <?php endif; endforeach; ?>
               <!-- <td class="cart_product">
 <<<<<<< HEAD
                 <a href=""><img src="<?php echo base_url();?>assets/images/cart/one.png" alt=""></a>

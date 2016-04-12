@@ -345,6 +345,7 @@ class Movie_model extends CI_Model {
         }
         }
 
+        //query to get all users
         public function get_users($userid=FALSE){
           if ($userid === FALSE)
           {
@@ -358,6 +359,22 @@ class Movie_model extends CI_Model {
           // $query=$this->db->query($sql,$reviewid);
           return $query->result_array();
         }
+
+        public function delete_user($id){
+          $this->db->select("*");
+          $this->db->from("test");
+          $this->db->where('id',$id);
+          $query = $this->db->get();
+          if ($query->num_rows() == 1) {
+            $sql = "UPDATE test set class=8  where id=?";
+            $query=$this->db->query($sql,$id);
+            return true;
+          } else {
+          return false;
+          }
+        }
+
+
         // Read data using username and password
         public function login($data) {
 
