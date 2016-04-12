@@ -211,7 +211,10 @@ $id = '1';
 							<div class="product-information"><!--/product-information-->
 								<!-- <img src="<?php echo base_url();?>assets/images/product-details/new.jpg" class="newarrival" alt="" /> -->
 									<h1><?php echo $movie_item['title'];?></h1>
-									<!-- <p>Web ID: 1089772</p> -->
+									<?php foreach ($rating as $rating_item): ?>
+										<h2><?php echo $rating_item;?>/10</h2>
+									<?php endforeach; ?>
+									<!-- <rating>Web ID: 1089772</p> -->
 									<!-- <img src="<?php echo base_url();?>assets/images/product-details/rating.png" alt="" /> -->
 									<span>
 										<!-- <span>US $59</span> -->

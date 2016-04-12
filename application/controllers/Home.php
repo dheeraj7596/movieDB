@@ -381,6 +381,9 @@ class Home extends CI_Controller {
                 $data['flag'] = 0;
             }
             $data['movieDetails'] = $this->movie_model->get_movie_info_by_id($movieid);
+            // $rating = $this->movie_model->get_avg_rating($movieid)[0];
+            // $rating1 = $rating[0]['aver'];
+            $data['rating'] = $this->movie_model->get_avg_rating($movieid)[0];
             $data['cast'] = $this->movie_model->get_cast_by_id($movieid);
             $data['director'] = $this->movie_model->get_director_id($movieid);
 

@@ -67,8 +67,13 @@ class Movie_model extends CI_Model {
         public function get_movie_info_by_pid($pid)
         {
             $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, person as P, work as W Where P.id = ? and P.id = W.personid and W.movieid = M.id";
-            // $sql = "SELECT M.id, M.title, M.genre1, M.language, M.country, M.year, M.story, M.image_name FROM movie as M, watchlist as W Where M.id=W.movieid and W.userid=?";
             $query=$this->db->query($sql, $pid);
+            return $query->result_array();
+        }
+        public function get_avg_rating ($movieid)
+        {
+            $sql = "SELECT avg(rating) as aver FROM review_table Where movieid = ?";
+            $query=$this->db->query($sql, $movieid);
             return $query->result_array();
         }
         public function get_movie_info_by_id($name = FALSE)
