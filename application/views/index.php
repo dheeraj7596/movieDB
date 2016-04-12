@@ -137,7 +137,7 @@ $id = '1';
 										<li><a href="<?php echo base_url();?>index.php/home/genre/Thriller">Thriller</a></li>
 										<li><a href="<?php echo base_url();?>index.php/home/genre/Drama">Drama</a></li>
 										<li><a href="<?php echo base_url();?>index.php/home/genre/Horror">Horror</a></li>
-										<li><a href="login.html">Login</a></li>
+										<!-- <li><a href="login.html">Login</a></li> -->
                                     </ul>
                                 </li>
 								<!-- <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
@@ -256,7 +256,7 @@ $id = '1';
 
 				<div class="col-sm-12 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">Movies</h2>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -265,18 +265,20 @@ $id = '1';
 											<h2>Life of Pi</h2>
 											<!-- <p>Easy Polo Black Edition</p> -->
 											<a href="<?php echo base_url();?>index.php/home/show_movie/2" class="btn btn-default add-to-cart">See</a>
+											<a href="<?php echo base_url();?>index.php/home/show_movie/2" class="btn btn-default add-to-cart">Watch trailer</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
                         <h2>Life of Pi</h2>
   											<!-- <p>Easy Polo Black Edition</p> -->
   											<a href="<?php echo base_url();?>index.php/home/show_movie/2" class="btn btn-default add-to-cart">See</a>
+  											<a href="https://www.youtube.com/watch?v=j9Hjrs6WQ8M" class="btn btn-default add-to-cart">Watch trailer</a>
 											</div>
 										</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<!-- <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li> -->
 										<!-- <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li> -->
 									</ul>
 								</div>
@@ -290,18 +292,20 @@ $id = '1';
                     <h2>American Beauty</h2>
                     <!-- <p>Easy Polo Black Edition</p> -->
                     <a href="<?php echo base_url();?>index.php/home/show_movie/5" class="btn btn-default add-to-cart">See</a>
+                    <a href="<?php echo base_url();?>index.php/home/show_movie/2" class="btn btn-default add-to-cart">Watch trailer</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
                       <h2>American Beauty</h2>
                       <!-- <p>Easy Polo Black Edition</p> -->
                       <a href="<?php echo base_url();?>index.php/home/show_movie/5" class="btn btn-default add-to-cart">See</a>
+                      <a href="https://www.youtube.com/watch?v=FfWnZthD9Tw" class="btn btn-default add-to-cart">Watch trailer</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<!-- <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li> -->
 										<!-- <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li> -->
 									</ul>
 								</div>
@@ -315,18 +319,21 @@ $id = '1';
                     <h2>American Hustle</h2>
                     <!-- <p>Easy Polo Black Edition</p> -->
                     <a href="<?php echo base_url();?>index.php/home/show_movie/6" class="btn btn-default add-to-cart">See</a>
+                    <a href="<?php echo base_url();?>index.php/home/show_movie/2" class="btn btn-default add-to-cart">Watch trailer</a>
+
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
                       <h2>American Hustle</h2>
 											<!-- <p>Easy Polo Black Edition</p> -->
 											<a href="<?php echo base_url();?>index.php/home/show_movie/6" class="btn btn-default add-to-cart">See</a>
+											<a href="https://www.youtube.com/watch?v=ST7a1aK_lG0" class="btn btn-default add-to-cart">Watch trailer</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<!-- <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li> -->
 										<!-- <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li> -->
 									</ul>
 								</div>
