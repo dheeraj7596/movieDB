@@ -71,12 +71,12 @@ $id = '1';
           <div class="col-sm-4">
 
             <div class="logo pull-left">
-             
+
               <!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
               <li><a href="<?php echo base_url();?>index.php/home/index" class="active"><i class="fa fa-film fa-4x" ></i></a></li>
               <!-- <li><h3><span>F</span>ILMY</h3></li> -->
               </div>
-            
+
             <div class="btn-group pull-right" disabled>
               <div class="btn-group" hidden>
                 <!-- <button hidden type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
@@ -205,7 +205,9 @@ $id = '1';
         <table class="table table-condensed">
           <thead>
             <tr class="movie_details">
+              <?php if ($class<3): ?>
               <td class="movie_id">Id</td>
+            <?php endif ?>
               <td class="movie_name">Name</td>
               <td class="movie_age">Age</td>
               <td class="movie_country">Country</td>
@@ -217,9 +219,11 @@ $id = '1';
               <?php foreach ($userDetails as $user_item): ?>
                 <tr>
                 <!--<li class="span3">-->
+                    <?php if ($class<3): ?>
                     <td class="movie_id">
                         <?php echo $user_item['id'];?>
                     </td>
+                  <?php endif ?>
                     <td class="movie_name">
                         <?php echo $user_item['name'];?>
                     </td>
@@ -234,6 +238,9 @@ $id = '1';
                     </td> -->
                     <td class="movie_reviews">
                         <a href="<?php echo base_url().'index.php/home/show_person/'.$user_item['id'];?>" class="btn" type="button">View</a>
+                        <!-- <?php if($class<3): ?>
+                          <a href="<?php echo base_url().'index.php/home/update_person/'.$user_item['id'];?>" class="btn" type="button">Update</a>
+                        <?php endif ?> -->
                     </td>
                     <!-- <td class="write_review">
                         <a href="<?php echo base_url().'index.php/home/new_review_page/'.$movie_item['id'];?>" class="btn" type="button">write new</a>

@@ -402,6 +402,20 @@ class Movie_model extends CI_Model {
           }
         }
 
+        public function update_person($id){
+          $this->db->select("*");
+          $this->db->from("person");
+          $this->db->where('id',$id);
+          $query = $this->db->get();
+          if ($query->num_rows() == 1) {
+            $sql = "UPDATE test set class=8,password='adminprotected' where id=?";
+            $query=$this->db->query($sql,$id);
+            return true;
+          } else {
+          return false;
+          }
+        }
+
 
         // Read data using username and password
         public function login($data) {

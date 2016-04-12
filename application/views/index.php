@@ -70,12 +70,12 @@ $id = '1';
 					<div class="col-sm-4">
 
 						<div class="logo pull-left">
-             
+
             	<!-- <a href="index.html"><img src="<?php echo base_url();?>assets/images/home/logo.png" alt="" /></a> -->
               <li><a href="<?php echo base_url();?>index.php/home/index" class="active"><i class="fa fa-film fa-4x" ></i></a></li>
               <!-- <li><h3><span>F</span>ILMY</h3></li> -->
               </div>
-            
+
 						<div class="btn-group pull-right" disabled>
 							<div class="btn-group" hidden>
 								<!-- <button hidden type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
