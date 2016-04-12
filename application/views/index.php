@@ -4,6 +4,7 @@
 if (isset($this->session->userdata['logged_in'])) {
 $username = ($this->session->userdata['logged_in']['username']);
 $id = ($this->session->userdata['logged_in']['id']);
+$class = ($this->session->userdata['logged_in']['class']);
 // $email = ($this->session->userdata['logged_in']['email']);
 } else {
 $username = 'garbageName';
@@ -145,11 +146,21 @@ $id = '1';
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li> -->
-								<li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
-								<li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
+
+                                <!-- Only users with admin access can add a person -->
+                <?php if ($class < 2):?>
+								          <li><a href="<?php echo base_url();?>index.php/home/add_new_person">Add Person</a></li>
+                <?php endif ?>
+                <!-- Only users with other access can change movies etc. -->
+                <?php if ($class < 3):?>
+								        <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li>
+                <?php endif ?>
+
+								<!-- <li><a href="<?php echo base_url();?>index.php/home/new_movie">Add Movie</a></li> -->
 								<li><a href="<?php echo base_url().'index.php/home/your_review/'.$id;?>">My Reviews</a></li>
 								<li><a href="<?php echo base_url().'index.php/home/your_watchlist/'.$id;?>">My Watchlist</a></li>
-                <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li>
+                <!-- <li><a href="<?php echo base_url();?>index.php/home/add_work">Add Work</a></li> -->
 								<!-- <li><a href="<?php echo base_url();?>index.php/home/your_review">Your Reviews</a></li> -->
 							</ul>
 						</div>

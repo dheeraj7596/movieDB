@@ -155,7 +155,8 @@ class Home extends CI_Controller {
                     if ($result != false) {
                     $session_data = array(
                     'username' => $result[0]->username,
-                    'id' => $result[0]->id
+                    'id' => $result[0]->id,
+                    'class'=> $result[0]->class
                     // 'email' => $result[0]->user_email,
                     );
                     // Add user data in session
