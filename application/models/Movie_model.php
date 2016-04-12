@@ -360,6 +360,21 @@ class Movie_model extends CI_Model {
           return $query->result_array();
         }
 
+        //query to get all persons
+        public function get_persons($userid=FALSE){
+          if ($userid === FALSE)
+          {
+              $query = $this->db->get('person');
+              return $query->result_array();
+          }
+          $this->db->select("*");
+          $this->db->from("person");
+          $this->db->where('id',$userid);
+          $query = $this->db->get();
+          // $query=$this->db->query($sql,$reviewid);
+          return $query->result_array();
+        }
+
         public function delete_user($id){
           $this->db->select("*");
           $this->db->from("test");
